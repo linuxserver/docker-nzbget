@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /sbin/setuser abc tail -F /downloads/dst/nzbget.log
