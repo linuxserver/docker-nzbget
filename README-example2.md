@@ -12,19 +12,19 @@ The [LinuxServer.io](http://linuxserver.io) team brings you another quality cont
 
 ```
 docker create \
-	--name <containter-name> \
-	-p <port>:<port> \
+	--name nzbget \
+	-p 6789:6789 \
 	-e PUID=<UID> -e PGID=<GID> \
 	-v </path/to/appdata>:/config \
-	-v <path/to/tvseries>:/tv \
-	linuxserver/name
+	-v <path/to/downloads>:/downloads \
+	linuxserver/nzbget
 ```
 
 **Parameters**
 
-* `-p <port>` - the port X webinterface
-* `-v /config` - x App data
-* `-v /x` - location of x on disk
+* `-p 6789` - NZBGet WebUI Port
+* `-v /config` - NZBGet App data
+* `-v /downloads` - location of downloads on disk
 * `-e PGID` for for GroupID - see below for explanation
 * `-e PUID` for for UserID - see below for explanation
 
@@ -36,10 +36,11 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Updates / Monitoring
 
-* Upgrade to the latest version of x simply `docker restart <container-name>`.
-* Monitor the logs of the container in realtime `docker logs -f <container-name>`.
+* Upgrade to the latest version of NZBGet simply `docker restart nzbget`.
+* Monitor the logs of the container in realtime `docker logs -f nzbget`.
 
 **Credits**
 
 * lonix <lonixx@gmail.com>
 * IronicBadger <ironicbadger@linuxserver.io>
+* j0nnymoe <j0nnymoe@linuxserver.io>
