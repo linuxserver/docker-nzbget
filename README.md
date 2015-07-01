@@ -4,7 +4,7 @@ The [LinuxServer.io](http://linuxserver.io) team brings you another quality cont
 
 # linuxserver/NZBGet
 
-[NZBGet](http://nzbget.net/) NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players.
+[NZBGet](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
 ## Usage
 
@@ -17,6 +17,8 @@ docker create \
 	-v <path/to/downloads>:/downloads \
 	linuxserver/nzbget
 ```
+
+This container is based on phusion-baseimage with ssh removed. For shell access whilst the container is running do `docker exec -it nzbget /bin/bash`.
 
 **Parameters**
 
