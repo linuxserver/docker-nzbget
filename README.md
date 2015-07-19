@@ -39,7 +39,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 * Upgrade to the latest version of NZBGet simply `docker restart nzbget`.
 * Monitor the logs of the container in realtime `docker logs -f nzbget`.
 
-**Credits**
+## Credits
 
 * lonix <lonixx@gmail.com>
 * IronicBadger <ironicbadger@linuxserver.io>
