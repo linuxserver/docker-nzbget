@@ -25,11 +25,6 @@ ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
  
-#Addusera
-RUN useradd -u 911 -U -s /bin/false abc
-RUN usermod -G users abc
-
-
 #Mappings
 VOLUME /config
 VOLUME /downloads
