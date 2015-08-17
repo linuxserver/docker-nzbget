@@ -1,4 +1,4 @@
 #!/bin/bash
 umask 000
 
-exec /sbin/setuser abc /app/nzbget -s -c /config/nzbget.conf
+exec /sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
