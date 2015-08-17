@@ -1,9 +1,6 @@
 FROM linuxserver/baseimage
 MAINTAINER Stian Larsen <lonixx@gmail.com>
 
-# Use baseimage-docker's init system
-CMD ["/sbin/my_init"]
-
 
 ADD nzbget.conf /tmp/nzbget.conf
 
