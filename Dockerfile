@@ -5,7 +5,7 @@ MAINTAINER Stian Larsen <lonixx@gmail.com>
 ADD nzbget.conf /tmp/nzbget.conf
 
 RUN apt-get update && \
-apt-get install -y wget 
+apt-get install -y wget && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
