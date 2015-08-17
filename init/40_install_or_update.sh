@@ -14,7 +14,7 @@ curl -o /tmp/json http://nzbget.net/info/nzbget-version-linux.json
 
 #Grabbing relevant data out of json
 TESTING_VERSION=$()
-if [ $TESTING ]: then
+if [ $TESTING ]; then
 	echo "Useing TESTING branch:"
 	REMOTE_VERSION=$(cat /tmp/json | grep testing-version | cut -d '"' -f 4)
 	DOWNLOAD=$(cat /tmp/json | grep testing-download | cut -d '"' -f 4)
