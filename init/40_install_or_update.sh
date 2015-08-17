@@ -24,7 +24,7 @@ else
 	DOWNLOAD=$(cat /tmp/json | grep stable-download | cut -d '"' -f 4)
 fi
 
-if [$LOCAL_VERSION != $REMOTE_VERSION ]; then
+if [ $LOCAL_VERSION != $REMOTE_VERSION ]; then
 		echo "Not up-to-date\Installed"
 		curl -o /tmp/nzbget.run $DOWNLOAD
 		/sbin/setuser abc sh /tmp/nzbget.run --destdir /app
