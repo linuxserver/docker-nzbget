@@ -4,16 +4,8 @@ MAINTAINER Stian Larsen <lonixx@gmail.com>
 
 ADD nzbget.conf /tmp/nzbget.conf
 
-RUN add-apt-repository ppa:mc3man/trusty-media && \
-apt-add-repository ppa:modriscoll/nzbget && \
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
-apt-get update -q && \
-apt-get install -qy libxml2 sgml-base libsigc++-2.0-0c2a python2.7-minimal xml-core javascript-common libjs-jquery libjs-jquery-metadata libjs-jquery-tablesorter libjs-twitter-bootstrap libpython-stdlib python2.7 python-minimal python ffmpeg wget unrar unzip p7zip && \
-apt-get install nzbget -y --force-yes && \
-curl -o /tmp/rar.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.2.1b2.tar.gz&& \
-tar xvf /tmp/rar.tar.gz  -C /tmp && \
-cp -v /tmp/rar/*rar /usr/bin/ && \
+RUN apt-get update && \
+apt-get install -y wget 
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
