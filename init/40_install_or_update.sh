@@ -30,7 +30,3 @@ if [ $LOCAL_VERSION != $REMOTE_VERSION ]; then
 		/sbin/setuser abc sh /tmp/nzbget.run --destdir /app
 		if [ -x /app/nzbget ]; then echo "Install successfull"; fi
 fi
-
-if [ ! -f /config/nzbget.conf ]; then
-	cp -v /app/nzbget.conf /config/nzbget.conf
-fi
