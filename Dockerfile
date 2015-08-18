@@ -1,9 +1,6 @@
 FROM linuxserver/baseimage
 MAINTAINER Stian Larsen <lonixx@gmail.com>
 
-
-ADD nzbget.conf /tmp/nzbget.conf
-
 RUN apt-get update && \
 apt-get install -y wget && \
 curl -o /tmp/rar.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.3.b2.tar.gz && \
