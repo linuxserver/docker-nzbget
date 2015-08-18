@@ -8,7 +8,6 @@ if [ ! -f /config/nzbget.conf ]; then
   sed -i -e "s#\(UMask=\).*#\1000#g" /config/nzbget.conf
   sed -i -e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" /config/nzbget.conf
   sed -i -e "s#\(ControlIP=\).*#\1#g" /config/nzbget.conf
-  cp /tmp/nzbget.conf /config/
   chown abc:abc /config/nzbget.conf
   mkdir -p /downloads/dst
   chown -R abc:abc /downloads
