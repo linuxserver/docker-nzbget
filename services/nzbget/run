@@ -1,12 +1,11 @@
 #!/bin/bash
 umask 000
 
-
-
 exec /sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
 PID_ID=$(cat /downloads/nzbget.lock)
-while [ kill -s 0 $PID_ID]; do
-sleep 500
+while [ kill -s 0 $PID_ID ]; do
+echo -n .
+sleep 5s
 done
 
-rm -f /downloads/nzbget.lock
+rm -fv /downloads/nzbget.lock
