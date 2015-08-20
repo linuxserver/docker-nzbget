@@ -2,6 +2,6 @@
 umask 000
 
 echo "Starting nzbget daemon"
-exec /sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
+/sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
 echo "Following log"
 exec /sbin/setuser abc tail -F /downloads/nzbget.log --pid=$(cat /downloads/nzbget.lock)
