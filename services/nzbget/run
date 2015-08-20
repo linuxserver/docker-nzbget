@@ -1,10 +1,10 @@
 #!/bin/bash
 umask 000
-
+echo "exec"
 exec /sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
 PID_ID=$(cat /downloads/nzbget.lock)
 while [ kill -s 0 $PID_ID ]; do
-echo -n .
+echo -n "."
 sleep 5s
 done
 
