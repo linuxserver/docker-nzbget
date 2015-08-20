@@ -17,3 +17,4 @@ fi
 echo "Checking som config options"
 sed -i -e "s#\(WebDir=\).*#\1$\{AppDir\}/webui#g" /config/nzbget.conf
 sed -i -e "s#\(ConfigTemplate=\).*#\1$\{AppDir\}/webui/nzbget.conf.template#g" /config/nzbget.conf
+sed -i -e "s#\(LogFile=\).*#\1$\{MainDir\}/nzbget.log" /config/nzbget.conf
