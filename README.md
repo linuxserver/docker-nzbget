@@ -38,6 +38,9 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 * Upgrade to the latest version of NZBGet simply `docker restart nzbget`.
 * Monitor the logs of the container in realtime `docker logs -f nzbget`.
+* If you wish to use unstable testing branch of nzbget, add -e TESTING=1 to your run command or template settings.
+* REMEMBER it is called unstable for a reason.
+
 
 #### Changelog
 + **18.08.2015:** Now useing latest version of unrar beta and implements the universal installer method. 
