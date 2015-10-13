@@ -3,4 +3,4 @@ umask 000
 
 /sbin/setuser abc /app/nzbget -D -c /config/nzbget.conf
 sleep 2s
-exec /sbin/setuser abc tail -F /downloads/nzbget.log --pid=$(cat /downloads/nzbget.lock)
+exec /sbin/setuser abc tail -F /downloads/nzbget.log --pid="$(cat /downloads/nzbget.lock)"
