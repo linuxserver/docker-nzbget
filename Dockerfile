@@ -8,7 +8,6 @@ apt-get install $APTLIST -qy && \
 curl -o /tmp/rar.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.3.b5.tar.gz && \
 tar xvf /tmp/rar.tar.gz  -C /tmp && \
 cp -v /tmp/rar/*rar /usr/bin/ && \
-mkdir -p /app && chown abc:abc /app && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
