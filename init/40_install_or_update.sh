@@ -15,12 +15,12 @@ curl -o /tmp/json http://nzbget.net/info/nzbget-version-linux.json
 #Grabbing relevant data out of json
 if [ "$TESTING" ]; then
 	echo "Useing TESTING branch:"
-	REMOTE_VERSION=$(grep testing-version -f /tmp/json | cut -d '"' -f 4)
-	DOWNLOAD=$(grep testing-download -f /tmp/json | cut -d '"' -f 4)
+	REMOTE_VERSION=$(grep testing-version /tmp/json | cut -d '"' -f 4)
+	DOWNLOAD=$(grep testing-download /tmp/json | cut -d '"' -f 4)
 else
 	echo "Useing STABLE Branch:"
-	REMOTE_VERSION=$(grep stable-version -f /tmp/json | cut -d '"' -f 4)
-	DOWNLOAD=$(grep stable-download -f /tmp/json  | cut -d '"' -f 4)
+	REMOTE_VERSION=$(grep stable-version /tmp/json | cut -d '"' -f 4)
+	DOWNLOAD=$(grep stable-download /tmp/json  | cut -d '"' -f 4)
 fi
 
 if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
