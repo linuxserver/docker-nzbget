@@ -13,20 +13,19 @@ curl -o /tmp/json http://nzbget.net/info/nzbget-version-linux.json
 
 
 #Grabbing relevant data out of json
-TESTING_VERSION=$()
-if [ $TESTING ]; then
+if [ "$TESTING" ]; then
 	echo "Useing TESTING branch:"
-	REMOTE_VERSION=$(cat /tmp/json | grep testing-version | cut -d '"' -f 4)
-	DOWNLOAD=$(cat /tmp/json | grep testing-download | cut -d '"' -f 4)
+	REMOTE_VERSION=$(grep testing-version -f /tmp/json | cut -d '"' -f 4)
+	DOWNLOAD=$(grep testing-download -f /tmp/json | cut -d '"' -f 4)
 else
 	echo "Useing STABLE Branch:"
-	REMOTE_VERSION=$(cat /tmp/json | grep stable-version | cut -d '"' -f 4)
-	DOWNLOAD=$(cat /tmp/json | grep stable-download | cut -d '"' -f 4)
+	REMOTE_VERSION=$(grep stable-version -f /tmp/json | cut -d '"' -f 4)
+	DOWNLOAD=$(grep stable-download -f /tmp/json  | cut -d '"' -f 4)
 fi
 
-if [ $LOCAL_VERSION != $REMOTE_VERSION ]; then
+if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
 		echo "Not up-to-date\Installed"
-		wget -O /tmp/nzbget.run $DOWNLOAD
+		wget -O /tmp/nzbget.run "$DOWNLOAD"
 		/sbin/setuser abc sh /tmp/nzbget.run --destdir /app
 		if [ -x /app/nzbget ]; then echo "Install successfull"; fi
 fi
