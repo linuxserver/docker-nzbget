@@ -3,7 +3,7 @@ MAINTAINER Stian Larsen <lonixx@gmail.com>
 
 RUN apt-get update && \
 apt-get install -y wget python && \
-curl -o /tmp/rar.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.3.b2.tar.gz && \
+curl -o /tmp/rar.tar.gz http://www.rarlab.com/rar/rarlinux-x64-5.3.b5.tar.gz && \
 tar xvf /tmp/rar.tar.gz  -C /tmp && \
 cp -v /tmp/rar/*rar /usr/bin/ && \
 mkdir -p /app && chown abc:abc /app && \
