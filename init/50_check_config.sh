@@ -1,4 +1,5 @@
 #!/bin/bash
+chown -R abc:abc /app
 
 if [ ! -f /config/nzbget.conf ]; then
   echo "No config found, copys default now"
