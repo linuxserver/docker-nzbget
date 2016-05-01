@@ -1,7 +1,7 @@
 FROM linuxserver/baseimage
 MAINTAINER Stian Larsen <lonixx@gmail.com>
 
-ENV APTLIST="wget python"
+ENV APTLIST="python"
 
 RUN apt-get update && \
 apt-get install $APTLIST -qy && \

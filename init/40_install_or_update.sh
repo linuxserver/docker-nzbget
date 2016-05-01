@@ -25,7 +25,7 @@ fi
 
 if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
 		echo "Not up-to-date\Installed"
-		wget -O /tmp/nzbget.run "$DOWNLOAD"
+		curl -o /tmp/nzbget.run -L "$DOWNLOAD"
 		/sbin/setuser abc sh /tmp/nzbget.run --destdir /app
 		if [ -x /app/nzbget ]; then echo "Install successfull"; fi
 fi
