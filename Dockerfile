@@ -5,6 +5,7 @@ ENV APTLIST="python"
 
 RUN apt-get update && \
 apt-get install $APTLIST -qy && \
+ln -fs /app/unrar /usr/bin/unrar && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Adding Custom files
