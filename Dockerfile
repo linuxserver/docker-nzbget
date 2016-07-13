@@ -7,6 +7,7 @@ ARG NZBGET_BRANCH="stable-download"
 # environment
 ARG NZBG_ROOT="/tmp"
 ARG NZBG_WWW="http://nzbget.net/info/nzbget-version-linux.json"
+ENV NZBG_INST="/app"
 
 # install packages
 RUN \
@@ -26,7 +27,7 @@ RUN \
  curl -o \
  "${NZBG_ROOT}/nzbget.run" -L \
 	"${NZBGET_VERSION}" && \
- sh "${NZBG_ROOT}/nzbget.run" --destdir /app && \
+ sh "${NZBG_ROOT}/nzbget.run" --destdir "${NZBG_INST}" && \
 
 # cleanup
  rm -rfv \

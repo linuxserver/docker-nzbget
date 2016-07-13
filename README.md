@@ -38,6 +38,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Info
 
+* The default login details (change ASAP) 'login:nzbget, password:tegbzn6789'
 * Monitor the logs of the container in realtime `docker logs -f nzbget`.
 * To allow scheduling, within settings/logging set the time correction value
 
