@@ -13,7 +13,8 @@ docker create \
 	--name nzbget \
 	-p 6789:6789 \
 	-e PUID=<UID> -e PGID=<GID> \
-	-v </path/to/appdata>:/config \
+	-e TZ=<timezone> \
+        -v </path/to/appdata>:/config \
 	-v <path/to/downloads>:/downloads \
 	linuxserver/nzbget
 ```
@@ -27,6 +28,7 @@ This container is based on alpine linux with s6 overlay. For shell access whilst
 * `-v /downloads` - location of downloads on disk
 * `-e PGID` for for GroupID - see below for explanation
 * `-e PUID` for for UserID - see below for explanation
+* `-e TZ` for timezone EG. Europe/London
 
 ### User / Group Identifiers
 

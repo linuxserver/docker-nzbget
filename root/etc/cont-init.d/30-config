@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+
+# check for lock file in downloads and delete if found
+[[ -f /downloads/nzbget.lock ]] && rm /downloads/nzbget.lock
+
+# check if config exists in /defaults, copy and configure if not
+if [ ! -e /defaults/nzbget.conf ]; then
+cp /app/nzbget.conf /defaults/nzbget.conf
+sed -i -e "s#\(MainDir=\).*#\1/downloads#g" /defaults/nzbget.conf
+sed -i -e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" /defaults/nzbget.conf
+sed -i -e "s#\(WebDir=\).*#\1$\{AppDir\}/webui#g" /defaults/nzbget.conf
+sed -i -e "s#\(ConfigTemplate=\).*#\1$\{AppDir\}/webui/nzbget.conf.template#g" /defaults/nzbget.conf
+fi
+
+# check if config exists in /config, copy if not
+[[ ! -e /config/nzbget.conf ]] && cp /defaults/nzbget.conf /config/nzbget.conf
+
+# permissions
+chown abc:abc /downloads
+chown abc:abc -R /config
+chmod u+rw /config/nzbget.conf
