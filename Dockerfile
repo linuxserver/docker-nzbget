@@ -2,7 +2,7 @@ FROM lsiobase/alpine
 MAINTAINER sparklyballs
 
 # package version (stable-download or testing-download)
-ARG NZBGET_BRANCH="testing-download"
+ARG NZBGET_BRANCH="stable-download"
 
 # environment
 ARG NZBG_ROOT="/tmp"
