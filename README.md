@@ -45,14 +45,19 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
     uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
 ```
 
+## Setting up the application
+
+Webui can be found at  `<your-ip>:6789` and the default login details (change ASAP) are 
+
+`login:nzbget, password:tegbzn6789`
+
+To allow scheduling, from the webui set the time correction value in settings/logging.
+
 ## Info
 
-* The default login details (change ASAP) `login:nzbget, password:tegbzn6789`
 * Monitor the logs of the container in realtime `docker logs -f nzbget`.
-* To allow scheduling, from the webui set the time correction value in settings/logging.
 
-#### Changelog
-
+## Versions
 + **19.08.16:** Rebase to alpine linux.
 + **18.08.15:** Now useing latest version of unrar beta and implements the universal installer method. 
 
