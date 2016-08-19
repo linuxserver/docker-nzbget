@@ -1,18 +1,37 @@
-FROM linuxserver/baseimage
-MAINTAINER Stian Larsen <lonixx@gmail.com>
+FROM lsiobase/alpine
+MAINTAINER sparklyballs
 
-ENV APTLIST="python"
+# package version
+# (stable-download or testing-download)
+ARG NZBGET_BRANCH="stable-download"
 
-RUN apt-get update && \
-apt-get install $APTLIST -qy && \
-ln -fs /app/unrar /usr/bin/unrar && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+# install packages
+RUN \
+ apk add --no-cache \
+	curl \
+	p7zip \
+	python \
+	unrar \
+	wget
 
-#Adding Custom files
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
- 
-#Mappings
+# install nzbget
+RUN \
+ curl -o \
+ /tmp/json -L \
+	http://nzbget.net/info/nzbget-version-linux.json && \
+ NZBGET_VERSION=$(grep "${NZBGET_BRANCH}" /tmp/json  | cut -d '"' -f 4) && \
+ curl -o \
+ /tmp/nzbget.run -L \
+	"${NZBGET_VERSION}" && \
+ sh /tmp/nzbget.run --destdir /app && \
+
+# cleanup
+ rm -rf \
+	/tmp/*
+
+# add local files
+COPY root/ /
+
+# ports and volumes
 VOLUME /config /downloads
 EXPOSE 6789
