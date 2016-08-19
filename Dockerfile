@@ -1,13 +1,9 @@
 FROM lsiobase/alpine
 MAINTAINER sparklyballs
 
-# package version (stable-download or testing-download)
+# package version
+# (stable-download or testing-download)
 ARG NZBGET_BRANCH="stable-download"
-
-# environment
-ARG NZBG_ROOT="/tmp"
-ARG NZBG_WWW="http://nzbget.net/info/nzbget-version-linux.json"
-ENV NZBG_INST="/app"
 
 # install packages
 RUN \
@@ -21,16 +17,16 @@ RUN \
 # install nzbget
 RUN \
  curl -o \
- "${NZBG_ROOT}/json" -L \
-	"${NZBG_WWW}" && \
- NZBGET_VERSION=$(grep "${NZBGET_BRANCH}" "${NZBG_ROOT}/json"  | cut -d '"' -f 4) && \
+ /tmp/json -L \
+	http://nzbget.net/info/nzbget-version-linux.json && \
+ NZBGET_VERSION=$(grep "${NZBGET_BRANCH}" /tmp/json  | cut -d '"' -f 4) && \
  curl -o \
- "${NZBG_ROOT}/nzbget.run" -L \
+ /tmp/nzbget.run -L \
 	"${NZBGET_VERSION}" && \
- sh "${NZBG_ROOT}/nzbget.run" --destdir "${NZBG_INST}" && \
+ sh /tmp/nzbget.run --destdir /app && \
 
 # cleanup
- rm -rfv \
+ rm -rf \
 	/tmp/*
 
 # add local files
