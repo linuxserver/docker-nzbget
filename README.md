@@ -54,8 +54,8 @@ Webui can be found at  `<your-ip>:6789` and the default login details (change AS
 To allow scheduling, from the webui set the time correction value in settings/logging.
 
 ## Info
-
-* Monitor the logs of the container in realtime `docker logs -f nzbget`.
+* Shell access whilst the container is running: `docker exec -it nzbget /bin/bash`
+* To monitor the logs of the container in realtime: `docker logs -f nzbget`
 
 ## Versions
 + **19.08.16:** Rebase to alpine linux.
