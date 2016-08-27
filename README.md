@@ -7,7 +7,16 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 # linuxserver/NZBGet
 
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/nzbget.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/nzbget.svg)][hub]
+[![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-nzbget)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-nzbget/)
+[hub]: https://hub.docker.com/r/linuxserver/nzbget/
+
 [NZBGet](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
+
+[![nzbget](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-banner.png)][nzbgeturl]
+[nzbgeturl]: http://nzbget.net/
 
 ## Usage
 
@@ -58,6 +67,8 @@ To allow scheduling, from the webui set the time correction value in settings/lo
 * To monitor the logs of the container in realtime: `docker logs -f nzbget`
 
 ## Versions
+
++ **27.08.16:** Add badges to README.
 + **19.08.16:** Rebase to alpine linux.
 + **18.08.15:** Now useing latest version of unrar beta and implements the universal installer method. 
 
