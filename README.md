@@ -15,6 +15,9 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 [NZBGet](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
+[![nzbget](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-banner.png)][nzbgeturl]
+[nzbgeturl]: http://nzbget.net/
+
 ## Usage
 
 ```
