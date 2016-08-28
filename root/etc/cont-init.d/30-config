@@ -23,6 +23,7 @@ fi
 chown abc:abc \
 	/downloads
 chown abc:abc -R \
+	/app \
 	/config
 chmod u+rw \
 	/config/nzbget.conf

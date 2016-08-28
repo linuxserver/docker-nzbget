@@ -68,7 +68,7 @@ To allow scheduling, from the webui set the time correction value in settings/lo
 
 ## Versions
 
-+ **27.08.16:** Add badges to README.
++ **27.08.16:** Add badges to README, perms fix on /app to allow updates.
 + **19.08.16:** Rebase to alpine linux.
 + **18.08.15:** Now useing latest version of unrar beta and implements the universal installer method. 
 
