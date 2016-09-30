@@ -70,6 +70,7 @@ To allow scheduling, from the webui set the time correction value in settings/lo
 
 ## Versions
 
++ **30.09.16:** Fix umask.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, perms fix on /app to allow updates.
 + **19.08.16:** Rebase to alpine linux.
