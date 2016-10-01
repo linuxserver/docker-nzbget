@@ -30,6 +30,7 @@ docker create \
 	-e TZ=<timezone> \
 	-v </path/to/appdata>:/config \
 	-v <path/to/downloads>:/downloads \
+	-v <path/to/scripts>:/app/scripts \
 	linuxserver/nzbget
 ```
 
@@ -40,6 +41,7 @@ This container is based on alpine linux with s6 overlay. For shell access whilst
 * `-p 6789` - NZBGet WebUI Port
 * `-v /config` - NZBGet App data
 * `-v /downloads` - location of downloads on disk
+* `-v /app/scripts` - NZBGet Post Processing Scripts
 * `-e PGID` for for GroupID - see below for explanation
 * `-e PUID` for for UserID - see below for explanation
 * `-e TZ` for timezone EG. Europe/London
@@ -70,6 +72,7 @@ To allow scheduling, from the webui set the time correction value in settings/lo
 
 ## Versions
 
++ **01.10.16:** Added volume for scripts.
 + **30.09.16:** Fix umask.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, perms fix on /app to allow updates.
