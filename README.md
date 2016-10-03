@@ -66,11 +66,11 @@ To allow scheduling, from the webui set the time correction value in settings/lo
 
 To change umask settings.
 
-[img]http://i.imgur.com/A4VMbwE.png[/img]
+![](http://i.imgur.com/A4VMbwE.png)
 
 scroll to bottom, set umask like this (example shown for unraid)
 
-[img]http://i.imgur.com/mIqDEJJ.png[/img]
+![](http://i.imgur.com/mIqDEJJ.png)
 
 
 ## Info
