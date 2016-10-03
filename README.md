@@ -64,6 +64,15 @@ Webui can be found at  `<your-ip>:6789` and the default login details (change AS
 
 To allow scheduling, from the webui set the time correction value in settings/logging.
 
+To change umask settings.
+
+![](http://i.imgur.com/A4VMbwE.png)
+
+scroll to bottom, set umask like this (example shown for unraid)
+
+![](http://i.imgur.com/mIqDEJJ.png)
+
+
 ## Info
 * Shell access whilst the container is running: `docker exec -it nzbget /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f nzbget`
