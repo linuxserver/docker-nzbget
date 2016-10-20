@@ -12,7 +12,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 # linuxserver/NZBGet
 
-[![](https://images.microbadger.com/badges/image/linuxserver/nzbget.svg)](http://microbadger.com/images/linuxserver/nzbget "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/nzbget.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/nzbget.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-nzbget)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-nzbget/)
+[![](https://images.microbadger.com/badges/image/linuxserver/nzbget.svg)](http://microbadger.com/images/linuxserver/nzbget "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/nzbget.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/nzbget.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-hub-built/linuxserver-nzbget)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-hub-built/job/linuxserver-nzbget/)
 [hub]: https://hub.docker.com/r/linuxserver/nzbget/
 
 [NZBGet](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
