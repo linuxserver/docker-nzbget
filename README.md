@@ -30,6 +30,7 @@ docker create \
 	-e TZ=<timezone> \
 	-v </path/to/appdata>:/config \
 	-v <path/to/downloads>:/downloads \
+	-v <path/to/scripts>:/app/scripts \
 	linuxserver/nzbget
 ```
 
@@ -46,6 +47,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-p 6789` - NZBGet WebUI Port
 * `-v /config` - NZBGet App data
 * `-v /downloads` - location of downloads on disk
+* `-v /app/scripts` - NZBGet Post Processing Scripts
 * `-e PGID` for for GroupID - see below for explanation
 * `-e PUID` for for UserID - see below for explanation
 * `-e TZ` for timezone EG. Europe/London
@@ -85,6 +87,7 @@ scroll to bottom, set umask like this (example shown for unraid)
 
 ## Versions
 
++ **01.10.16:** Added volume for scripts.
 + **30.09.16:** Fix umask.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, perms fix on /app to allow updates.
