@@ -1,20 +1,25 @@
-FROM lsiobase/alpine
+FROM lsiobase/alpine:3.5
 MAINTAINER sparklyballs
 
-# package version
+# set version label
+ARG BUILD_DATE
+ARG VERSION
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+
+# package version
 # (stable-download or testing-download)
 ARG NZBGET_BRANCH="stable-download"
 
-# install packages
+# install packages
 RUN \
  apk add --no-cache \
 	curl \
 	p7zip \
-	python \
+	python2 \
 	unrar \
 	wget
 
-# install nzbget
+# install nzbget
 RUN \
  curl -o \
  /tmp/json -L \
@@ -25,13 +30,14 @@ RUN \
 	"${NZBGET_VERSION}" && \
  sh /tmp/nzbget.run --destdir /app && \
 
-# cleanup
+# cleanup
  rm -rf \
 	/tmp/*
 
-# add local files
+# add local files
 COPY root/ /
 
 # ports and volumes
 VOLUME /config /downloads
 EXPOSE 6789
+
