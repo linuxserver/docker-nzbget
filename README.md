@@ -85,6 +85,7 @@ scroll to bottom, set umask like this (example shown for unraid)
 
 ## Versions
 
++ **06.02.17:** Rebase to alpine 3.5.
 + **30.09.16:** Fix umask.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, perms fix on /app to allow updates.
