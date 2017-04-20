@@ -17,10 +17,9 @@ RUN \
 	p7zip \
 	python2 \
 	unrar \
-	wget
+	wget && \
 
 # install nzbget
-RUN \
  curl -o \
  /tmp/json -L \
 	http://nzbget.net/info/nzbget-version-linux.json && \
