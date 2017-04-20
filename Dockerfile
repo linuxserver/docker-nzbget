@@ -40,4 +40,3 @@ COPY root/ /
 # ports and volumes
 VOLUME /config /downloads
 EXPOSE 6789
-
