@@ -8,7 +8,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 
 # package version
 # (stable-download or testing-download)
-ARG NZBGET_BRANCH="stable-download"
+ARG NZBGET_BRANCH="testing-download"
 
 # install packages
 RUN \
