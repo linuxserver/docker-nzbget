@@ -92,6 +92,7 @@ scroll to bottom, set umask like this (example shown for unraid)
 
 ## Versions
 
++ **28.05.17:** Rebase to alpine 3.6.
 + **20.04.17:** Add testing branch.
 + **06.02.17:** Rebase to alpine 3.5.
 + **30.09.16:** Fix umask.
