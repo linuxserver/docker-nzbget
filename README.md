@@ -12,9 +12,8 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [IRC][ircurl] on freenode at `#linuxserver.io`
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
-# linuxserver/NZBGet
-
-[![](https://images.microbadger.com/badges/image/linuxserver/nzbget.svg)](http://microbadger.com/images/linuxserver/nzbget "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/nzbget.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/nzbget.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-hub-built/linuxserver-nzbget)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-hub-built/job/linuxserver-nzbget/)
+# linuxserver/nzbget
+[![](https://images.microbadger.com/badges/version/linuxserver/nzbget.svg)](https://microbadger.com/images/linuxserver/nzbget "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/nzbget.svg)](https://microbadger.com/images/linuxserver/nzbget "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/nzbget.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/nzbget.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-nzbget)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-nzbget/)
 
 [NZBGet](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
@@ -88,10 +87,19 @@ scroll to bottom, set umask like this (example shown for unraid)
 
 ## Info
 * Shell access whilst the container is running: `docker exec -it nzbget /bin/bash`
-* To monitor the logs of the container in realtime: `docker logs -f nzbget`
+To monitor the logs of the container in realtime: `docker logs -f nzbget`
+
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' nzbget`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/nzbget`
 
 ## Versions
 
++ **12.07.17:** Add inspect commands to README, move to jenkins build and push.
 + **28.05.17:** Rebase to alpine 3.6.
 + **20.04.17:** Add testing branch.
 + **06.02.17:** Rebase to alpine 3.5.
