@@ -99,6 +99,7 @@ To monitor the logs of the container in realtime: `docker logs -f nzbget`
 
 ## Versions
 
++ **02.09.17:** Place app in subfolder rather than /app.
 + **12.07.17:** Add inspect commands to README, move to jenkins build and push.
 + **28.05.17:** Rebase to alpine 3.6.
 + **20.04.17:** Add testing branch.
