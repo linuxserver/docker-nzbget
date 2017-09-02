@@ -20,6 +20,8 @@ RUN \
 	wget && \
 
 # install nzbget
+ mkdir -p \
+	/app/nzbget && \
  curl -o \
  /tmp/json -L \
 	http://nzbget.net/info/nzbget-version-linux.json && \
@@ -27,7 +29,16 @@ RUN \
  curl -o \
  /tmp/nzbget.run -L \
 	"${NZBGET_VERSION}" && \
- sh /tmp/nzbget.run --destdir /app && \
+ sh /tmp/nzbget.run --destdir /app/nzbget && \
+
+# configure nzbget
+ cp /app/nzbget/nzbget.conf /defaults/nzbget.conf && \
+ sed -i \
+	-e "s#\(MainDir=\).*#\1/downloads#g" \
+	-e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" \
+	-e "s#\(WebDir=\).*#\1$\{AppDir\}/webui#g" \
+	-e "s#\(ConfigTemplate=\).*#\1$\{AppDir\}/webui/nzbget.conf.template#g" \
+ /defaults/nzbget.conf && \
 
 # cleanup
  rm -rf \
