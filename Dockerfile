@@ -16,6 +16,7 @@ RUN \
 	curl \
 	p7zip \
 	python2 \
+	python3 \
 	unrar \
 	wget && \
  echo "**** install nzbget ****" && \
