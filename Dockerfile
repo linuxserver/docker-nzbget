@@ -17,6 +17,7 @@ RUN \
 	p7zip \
 	python2 \
 	unrar \
+	openssh-client \
 	wget && \
  echo "**** install nzbget ****" && \
  mkdir -p \
