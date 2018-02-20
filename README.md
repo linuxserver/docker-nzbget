@@ -88,7 +88,7 @@ You can add an additional mount point for intermediate unpacking folder with:-
 
 `-v </path/to/intermedia_unpacking_folder>:/intermediate`
 
-for example and changing the settings in the PATHS tab to `/intermediate` 
+for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate` 
 
 ## Info
 * Shell access whilst the container is running: `docker exec -it nzbget /bin/bash`
