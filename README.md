@@ -104,6 +104,7 @@ To monitor the logs of the container in realtime: `docker logs -f nzbget`
 
 ## Versions
 
++ **21.08.18:** Rebase to alpine 3.8.
 + **20.02.18:** Add note about supplemental mount point for intermediate unpacking.
 + **13.12.17:** Rebase to alpine 3.7.
 + **02.09.17:** Place app in subfolder rather than /app.
