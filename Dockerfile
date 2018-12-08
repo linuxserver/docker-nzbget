@@ -1,9 +1,9 @@
+ARG FFMPEG_VERSION=3.4.5
 FROM lsiobase/alpine:3.8
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG FFMPEG_VERSION=3.4.5
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
@@ -41,13 +41,13 @@ RUN apk add --update fdk-aac-dev
 
 # Get FFmpeg source.
 RUN cd /tmp/ && \
-  wget http://ffmpeg.org/releases/ffmpeg-"${FFMPEG_VERSION}".tar.gz && \
-  tar zxf ffmpeg-"${FFMPEG_VERSION}".tar.gz && rm ffmpeg-"${FFMPEG_VERSION}".tar.gz
+  wget http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz && \
+  tar zxf ffmpeg-${FFMPEG_VERSION}.tar.gz && rm ffmpeg-${FFMPEG_VERSION}.tar.gz
 
 # Compile ffmpeg.
-RUN cd /tmp/ffmpeg-"${FFMPEG_VERSION}" && \
+RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
   ./configure \
-  --prefix="${PREFIX}" \
+  --prefix=${PREFIX} \
   --enable-version3 \
   --enable-gpl \
   --enable-nonfree \
