@@ -41,7 +41,7 @@ RUN apk add --update fdk-aac-dev
 
 # Get FFmpeg source.
 RUN cd /tmp/ && \
-  wget http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz && \
+  wget http://ffmpeg.org/releases/ffmpeg-"${FFMPEG_VERSION}".tar.gz && \
   tar zxf ffmpeg-"${FFMPEG_VERSION}".tar.gz && rm ffmpeg-"${FFMPEG_VERSION}".tar.gz
 
 # Compile ffmpeg.
