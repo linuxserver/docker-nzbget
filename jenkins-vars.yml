@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-nzbget
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'nzbget'
+  - EXT_REPO = 'nzbget'
+  - BUILD_VERSION_ARG = 'NZBGET_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-nzbget'
+  - CONTAINER_NAME = 'nzbget'
+  - DOCKERHUB_IMAGE = 'linuxserver/nzbget'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/nzbget'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/nzbget'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='6789'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='nzbget:tegbzn6789'
+  - CI_WEBPATH=''
