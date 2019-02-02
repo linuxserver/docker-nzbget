@@ -2,14 +2,13 @@
 
 # jenkins variables
 project_name: docker-nzbget
-external_type: github_devel
+external_type: custom_json
 release_type: prerelease
 release_tag: testing
 ls_branch: testing
 repo_vars:
-  - EXT_GIT_BRANCH = 'master'
-  - EXT_USER = 'nzbget'
-  - EXT_REPO = 'nzbget'
+  - JSON_URL = 'https://api.github.com/repos/nzbget/nzbget/releases'
+  - JSON_PATH = 'first(.[] | select(.prerelease == true)) | .tag_name'
   - BUILD_VERSION_ARG = 'NZBGET_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-nzbget'
