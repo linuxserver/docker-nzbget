@@ -6,7 +6,7 @@
 
 # check if config file exists in /config
 [[ ! -f /config/nzbget.conf ]] && \
-	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
+	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf && \
 	sed -i \
 		 -e "s#\(MainDir=\).*#\1/downloads#g" \
 		 -e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" \
