@@ -1,3 +1,34 @@
+# Buildstage
+FROM lsiobase/alpine.armhf:3.8 as buildstage
+
+# set NZBGET version
+ARG NZBGET_RELEASE
+
+RUN \
+ echo "**** install build packages ****" && \
+ apk add \
+	curl \
+        g++ \
+        gcc \
+	git \
+	libxml2-dev \
+        make \
+	ncurses-dev \
+	openssl-dev && \
+ echo "**** build nzbget ****" && \
+ if [ -z ${NZBGET_RELEASE+x} ]; then \
+	NZBGET_RELEASE=$(curl -sX GET "https://api.github.com/repos/nzbget/nzbget/releases/latest" \
+	| awk '/tag_name/{print $4;exit}' FS='[""]'); \
+ fi && \
+ mkdir -p /app/nzbget && \
+ git clone https://github.com/nzbget/nzbget.git nzbget && \
+ cd nzbget/ && \
+ git checkout ${NZBGET_RELEASE} && \
+ ./configure && \
+ make && \
+ make prefix=/app/nzbget install
+
+# Runtime Stage
 FROM lsiobase/alpine.armhf:3.8
 
 # Add qemu to build on x86_64 systems
@@ -7,44 +38,21 @@ COPY qemu-arm-static /usr/bin
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
-
-# package version
-# (stable-download or testing-download)
-ARG NZBGET_BRANCH="stable-download"
+LABEL maintainer="sparklyballs,thelamer"
 
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache \
 	curl \
+	libxml2 \
+	openssl \
 	p7zip \
 	python2 \
 	unrar \
-	wget && \
- echo "**** install nzbget ****" && \
- mkdir -p \
-	/app/nzbget && \
- curl -o \
- /tmp/json -L \
-	http://nzbget.net/info/nzbget-version-linux.json && \
- NZBGET_VERSION=$(grep "${NZBGET_BRANCH}" /tmp/json  | cut -d '"' -f 4) && \
- curl -o \
- /tmp/nzbget.run -L \
-	"${NZBGET_VERSION}" && \
- sh /tmp/nzbget.run --destdir /app/nzbget && \
- echo "**** configure nzbget ****" && \
- cp /app/nzbget/nzbget.conf /defaults/nzbget.conf && \
- sed -i \
-	-e "s#\(MainDir=\).*#\1/downloads#g" \
-	-e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" \
-	-e "s#\(WebDir=\).*#\1$\{AppDir\}/webui#g" \
-	-e "s#\(ConfigTemplate=\).*#\1$\{AppDir\}/webui/nzbget.conf.template#g" \
- /defaults/nzbget.conf && \
- echo "**** cleanup ****" && \
- rm -rf \
-	/tmp/*
+	wget 
 
-# add local files
+# add local files and files from buildstage
+COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
 
 # ports and volumes
