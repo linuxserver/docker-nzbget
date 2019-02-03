@@ -24,7 +24,8 @@ RUN \
  git clone https://github.com/nzbget/nzbget.git nzbget && \
  cd nzbget/ && \
  git checkout ${NZBGET_RELEASE} && \
- ./configure && \
+ ./configure \
+	bindir='${exec_prefix}' && \
  make && \
  make prefix=/app/nzbget install
 
