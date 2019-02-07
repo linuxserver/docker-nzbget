@@ -26,9 +26,31 @@ RUN \
  cd nzbget/ && \
  git checkout ${NZBGET_RELEASE} && \
  ./configure \
-        bindir='${exec_prefix}' && \
+	bindir='${exec_prefix}' && \
  make && \
- make prefix=/app/nzbget install
+ make prefix=/app/nzbget install && \
+ sed -i \
+        -e "s#^MainDir=.*#MainDir=/downloads#g" \
+        -e "s#^ScriptDir=.*#ScriptDir=$\{MainDir\}/scripts#g" \
+        -e "s#^WebDir=.*#WebDir=$\{AppDir\}/webui#g" \
+        -e "s#^ConfigTemplate=.*#ConfigTemplate=$\{AppDir\}/webui/nzbget.conf.template#g" \
+        -e "s#^UnrarCmd=.*#UnrarCmd=$\{AppDir\}/unrar#g" \
+        -e "s#^SevenZipCmd=.*#SevenZipCmd=$\{AppDir\}/7za#g" \
+        -e "s#^CertStore=.*#CertStore=$\{AppDir\}/cacert.pem#g" \
+        -e "s#^CertCheck=.*#CertCheck=yes#g" \
+        -e "s#^DestDir=.*#DestDir=$\{MainDir\}/completed#g" \
+        -e "s#^InterDir=.*#InterDir=$\{MainDir\}/intermediate#g" \
+        -e "s#^LogFile=.*#LogFile=$\{MainDir\}/nzbget.log#g" \
+        -e "s#^AuthorizedIP=.*#AuthorizedIP=127.0.0.1#g" \
+ /app/nzbget/share/nzbget/nzbget.conf && \
+ mv /app/nzbget/share/nzbget/webui /app/nzbget/ && \
+ cp /app/nzbget/share/nzbget/nzbget.conf /app/nzbget/webui/nzbget.conf.template && \
+ ln -s /usr/bin/7za /app/nzbget/7za && \
+ ln -s /usr/bin/unrar /app/nzbget/unrar && \
+ cp /nzbget/pubkey.pem /app/nzbget/pubkey.pem && \
+ curl -o \
+	/app/nzbget/cacert.pem -L \
+	"https://curl.haxx.se/ca/cacert.pem"
 
 # Runtime Stage
 FROM lsiobase/alpine.armhf:3.8
@@ -51,7 +73,7 @@ RUN \
 	p7zip \
 	python2 \
 	unrar \
-	wget 
+	wget
 
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget

@@ -6,18 +6,7 @@
 
 # check if config file exists in /config
 [[ ! -f /config/nzbget.conf ]] && \
-	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf && \
-	sed -i \
-		-e "s#\(MainDir=\).*#\1/downloads#g" \
-		-e "s#\(ScriptDir=\).*#\1$\{MainDir\}/scripts#g" \
-		-e "s#\(WebDir=\).*#\1$\{AppDir\}/webui#g" \
-		-e "s#\(ConfigTemplate=\).*#\1$\{AppDir\}/webui/nzbget.conf.template#g" \
-	/config/nzbget.conf
-
-# add config template if it does not exits
-[[ ! -d /app/nzbget/webui ]] && \
-	mv /app/nzbget/share/nzbget/webui /app/nzbget/ && \
-	mv /app/nzbget/share/nzbget/nzbget.conf /app/nzbget/webui/nzbget.conf.template
+	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 
 # permissions
 chown abc:abc \
