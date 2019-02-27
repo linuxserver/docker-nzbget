@@ -28,8 +28,8 @@ shadow shadow-4.5-r0
 tzdata tzdata-2018i-r0
 nghttp2-libs nghttp2-libs-1.35.1-r0
 libssh2 libssh2-1.8.0-r4
-libcurl libcurl-7.63.0-r0
-curl curl-7.63.0-r0
+libcurl libcurl-7.64.0-r1
+curl curl-7.64.0-r1
 libxml2 libxml2-2.9.9-r1
 openssl openssl-1.1.1a-r1
 libgcc libgcc-8.2.0-r2
