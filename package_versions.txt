@@ -17,7 +17,7 @@ libcrypto1.1-1.1.1b-r1
 libcurl-7.64.0-r1
 libffi-3.2.1-r6
 libgcc-8.2.0-r2
-libssh2-1.8.1-r0
+libssh2-1.8.2-r0
 libssl1.1-1.1.1b-r1
 libstdc++-8.2.0-r2
 libtls-standalone-2.7.4-r6
