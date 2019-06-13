@@ -62,7 +62,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs,thelamer"
 
 RUN \
-  echo "**** install build packages ****" && \
+ echo "**** install build packages ****" && \
  apk add --no-cache --upgrade --virtual=build-dependencies \
 	py2-pip && \
  echo "**** install packages ****" && \
@@ -76,15 +76,16 @@ RUN \
 	wget && \
  echo "**** install python packages ****" && \
  pip install --no-cache-dir \
-    apprise \
+	apprise \
 	chardet \
 	pynzbget &&\
  echo "**** cleanup ****" && \
  apk del --purge \
-    build-dependencies \
-rm -rf \
+	build-dependencies && \
+ rm -rf \
 	/root/.cache \
-    /tmp/*
+	/tmp/*
+
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
