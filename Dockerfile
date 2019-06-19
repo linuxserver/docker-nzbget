@@ -8,13 +8,13 @@ RUN \
  echo "**** install build packages ****" && \
  apk add \
 	curl \
-        g++ \
-        gcc \
+	g++ \
+	gcc \
 	git \
 	jq \
 	libxml2-dev \
 	libxslt-dev \
-        make \
+	make \
 	ncurses-dev \
 	openssl-dev && \
  echo "**** build nzbget ****" && \
@@ -31,18 +31,18 @@ RUN \
  make && \
  make prefix=/app/nzbget install && \
  sed -i \
-        -e "s#^MainDir=.*#MainDir=/downloads#g" \
-        -e "s#^ScriptDir=.*#ScriptDir=$\{MainDir\}/scripts#g" \
-        -e "s#^WebDir=.*#WebDir=$\{AppDir\}/webui#g" \
-        -e "s#^ConfigTemplate=.*#ConfigTemplate=$\{AppDir\}/webui/nzbget.conf.template#g" \
-        -e "s#^UnrarCmd=.*#UnrarCmd=$\{AppDir\}/unrar#g" \
-        -e "s#^SevenZipCmd=.*#SevenZipCmd=$\{AppDir\}/7za#g" \
-        -e "s#^CertStore=.*#CertStore=$\{AppDir\}/cacert.pem#g" \
-        -e "s#^CertCheck=.*#CertCheck=yes#g" \
-        -e "s#^DestDir=.*#DestDir=$\{MainDir\}/completed#g" \
-        -e "s#^InterDir=.*#InterDir=$\{MainDir\}/intermediate#g" \
-        -e "s#^LogFile=.*#LogFile=$\{MainDir\}/nzbget.log#g" \
-        -e "s#^AuthorizedIP=.*#AuthorizedIP=127.0.0.1#g" \
+	-e "s#^MainDir=.*#MainDir=/downloads#g" \
+	-e "s#^ScriptDir=.*#ScriptDir=$\{MainDir\}/scripts#g" \
+	-e "s#^WebDir=.*#WebDir=$\{AppDir\}/webui#g" \
+	-e "s#^ConfigTemplate=.*#ConfigTemplate=$\{AppDir\}/webui/nzbget.conf.template#g" \
+	-e "s#^UnrarCmd=.*#UnrarCmd=$\{AppDir\}/unrar#g" \
+	-e "s#^SevenZipCmd=.*#SevenZipCmd=$\{AppDir\}/7za#g" \
+	-e "s#^CertStore=.*#CertStore=$\{AppDir\}/cacert.pem#g" \
+	-e "s#^CertCheck=.*#CertCheck=yes#g" \
+	-e "s#^DestDir=.*#DestDir=$\{MainDir\}/completed#g" \
+	-e "s#^InterDir=.*#InterDir=$\{MainDir\}/intermediate#g" \
+	-e "s#^LogFile=.*#LogFile=$\{MainDir\}/nzbget.log#g" \
+	-e "s#^AuthorizedIP=.*#AuthorizedIP=127.0.0.1#g" \
  /app/nzbget/share/nzbget/nzbget.conf && \
  mv /app/nzbget/share/nzbget/webui /app/nzbget/ && \
  cp /app/nzbget/share/nzbget/nzbget.conf /app/nzbget/webui/nzbget.conf.template && \
@@ -65,6 +65,8 @@ LABEL maintainer="sparklyballs,thelamer"
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --upgrade --virtual=build-dependencies \
+	libxml2-dev \
+	libxslt-dev \
 	py2-pip && \
  echo "**** install packages ****" && \
  apk add --no-cache \
