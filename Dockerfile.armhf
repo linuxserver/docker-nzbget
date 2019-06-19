@@ -65,9 +65,13 @@ LABEL maintainer="sparklyballs,thelamer"
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --upgrade --virtual=build-dependencies \
+	gcc \
+	libc-dev \
 	libxml2-dev \
 	libxslt-dev \
-	py2-pip && \
+	make \
+	py2-pip \
+	python-dev && \
  echo "**** install packages ****" && \
  apk add --no-cache \
 	curl \
