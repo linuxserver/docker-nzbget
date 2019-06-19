@@ -13,6 +13,7 @@ RUN \
 	git \
 	jq \
 	libxml2-dev \
+	libxslt-dev \
         make \
 	ncurses-dev \
 	openssl-dev && \
@@ -69,6 +70,7 @@ RUN \
  apk add --no-cache \
 	curl \
 	libxml2 \
+	libxslt \
 	openssl \
 	p7zip \
 	python2 \
