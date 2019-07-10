@@ -11,7 +11,7 @@ expat-2.2.7-r0
 gdbm-1.13-r1
 libacl-2.2.52-r6
 libattr-2.4.48-r0
-libbz2-1.0.6-r6
+libbz2-1.0.6-r7
 libc-utils-0.7.1-r0
 libcrypto1.1-1.1.1c-r0
 libcurl-7.65.1-r0
