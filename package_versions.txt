@@ -7,7 +7,7 @@ ca-certificates-20191127-r0
 ca-certificates-cacert-20191127-r0
 coreutils-8.31-r0
 curl-7.67.0-r0
-expat-2.2.9-r0
+expat-2.2.9-r1
 gdbm-1.13-r1
 libacl-2.2.53-r0
 libattr-2.4.48-r0
