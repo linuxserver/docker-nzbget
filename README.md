@@ -168,6 +168,12 @@ You can add an additional mount point for intermediate unpacking folder with:-
 
 for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
+## Python 3 transition
+
+We provide Python and related packages in this image for extension support. While extensions transition to Python 3 we will install both Python 2 and Python 3 in the standard container. If you want to force your extensions to use Python 3 you should modify:
+
+`Settings => Extension Scripts => ShellOverride = .py=/usr/bin/python3`
+
 
 
 ## Support Info
