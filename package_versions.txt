@@ -34,6 +34,7 @@ nghttp2-libs-1.40.0-r0
 openssl-1.1.1d-r3
 p7zip-16.02-r3
 python2-2.7.16-r3
+python3-3.8.1-r0
 readline-8.0.1-r0
 scanelf-1.2.4-r0
 shadow-4.7-r1
