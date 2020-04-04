@@ -106,5 +106,5 @@ COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
 
 # ports and volumes
-VOLUME /config /downloads
+VOLUME /config
 EXPOSE 6789
