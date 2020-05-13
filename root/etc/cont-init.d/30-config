@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv bash
 
+# make our folders
+mkdir -p /downloads
+
 # delete lock file if found
 [[ -f /downloads/nzbget.lock ]] && \
 	rm /downloads/nzbget.lock

@@ -76,6 +76,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "13.05.20:", desc: "Add rarfile python package (for DeepUnrar)." }
   - { date: "01.01.20:", desc: "Add python3 alongside python2 during transition." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }

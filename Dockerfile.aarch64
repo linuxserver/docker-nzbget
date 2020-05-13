@@ -86,14 +86,20 @@ RUN \
 	unrar \
 	wget && \
  echo "**** install python packages ****" && \
+ pip2 install --no-cache-dir -U \
+	pip && \
  pip2 install --no-cache-dir \
 	apprise \
 	chardet \
-	pynzbget &&\
+	pynzbget \
+	rarfile && \
+ pip3 install --no-cache-dir -U \
+	pip && \
  pip3 install --no-cache-dir \
-        apprise \
-        chardet \
-        pynzbget &&\
+	apprise \
+	chardet \
+	pynzbget \
+	rarfile && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
