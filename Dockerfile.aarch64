@@ -89,11 +89,13 @@ RUN \
  pip2 install --no-cache-dir \
 	apprise \
 	chardet \
+	rarfile \
 	pynzbget &&\
  pip3 install --no-cache-dir \
-        apprise \
-        chardet \
-        pynzbget &&\
+	apprise \
+	chardet \
+	rarfile \
+	pynzbget &&\
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
