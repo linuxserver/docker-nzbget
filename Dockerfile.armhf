@@ -1,5 +1,5 @@
 # Buildstage
-FROM lsiobase/alpine:arm32v7-3.11 as buildstage
+FROM lsiobase/alpine:arm32v7-3.12 as buildstage
 
 # set NZBGET version
 ARG NZBGET_RELEASE
@@ -54,7 +54,7 @@ RUN \
 	"https://curl.haxx.se/ca/cacert.pem"
 
 # Runtime Stage
-FROM lsiobase/alpine:arm32v7-3.11
+FROM lsiobase/alpine:arm32v7-3.12
 
 # set version label
 ARG BUILD_DATE
@@ -70,9 +70,7 @@ RUN \
 	libxml2-dev \
 	libxslt-dev \
 	make \
-	py2-pip \
 	py3-pip \
-	python2-dev \
 	python3-dev && \
  echo "**** install packages ****" && \
  apk add --no-cache \
@@ -81,18 +79,10 @@ RUN \
 	libxslt \
 	openssl \
 	p7zip \
-	python2 \
 	python3 \
 	unrar \
 	wget && \
  echo "**** install python packages ****" && \
- pip2 install --no-cache-dir -U \
-	pip && \
- pip2 install --no-cache-dir \
-	apprise \
-	chardet \
-	pynzbget \
-	rarfile && \
  pip3 install --no-cache-dir -U \
 	pip && \
  pip3 install --no-cache-dir \
