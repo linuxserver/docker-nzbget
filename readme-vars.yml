@@ -68,14 +68,9 @@ app_setup_block: |
 
   for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
-  ## Python 3 transition
-  
-  We provide Python and related packages in this image for extension support. While extensions transition to Python 3 we will install both Python 2 and Python 3 in the standard container. If you want to force your extensions to use Python 3 you should modify:
-  
-  `Settings => Extension Scripts => ShellOverride = .py=/usr/bin/python3`
-
 # changelog
 changelogs:
+  - { date: "01.06.20:", desc: "Rebasing to alpine 3.12. Removing python2." }
   - { date: "13.05.20:", desc: "Add rarfile python package (for DeepUnrar)." }
   - { date: "01.01.20:", desc: "Add python3 alongside python2 during transition." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }

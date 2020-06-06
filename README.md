@@ -172,12 +172,6 @@ You can add an additional mount point for intermediate unpacking folder with:-
 
 for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
-## Python 3 transition
-
-We provide Python and related packages in this image for extension support. While extensions transition to Python 3 we will install both Python 2 and Python 3 in the standard container. If you want to force your extensions to use Python 3 you should modify:
-
-`Settings => Extension Scripts => ShellOverride = .py=/usr/bin/python3`
-
 
 ## Docker Mods
 [![Docker Mods](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=mods&query=%24.mods%5B%27nzbget%27%5D.mod_count&url=https%3A%2F%2Fraw.githubusercontent.com%2Flinuxserver%2Fdocker-mods%2Fmaster%2Fmod-list.yml)](https://mods.linuxserver.io/?mod=nzbget "view available mods for this container.")
@@ -249,6 +243,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **01.06.20:** - Rebasing to alpine 3.12. Removing python2.
 * **13.05.20:** - Add rarfile python package (for DeepUnrar).
 * **01.01.20:** - Add python3 alongside python2 during transition.
 * **19.12.19:** - Rebasing to alpine 3.11.
