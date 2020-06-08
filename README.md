@@ -243,6 +243,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **08.06.20:** - Symlink python3 bin to python.
 * **01.06.20:** - Rebasing to alpine 3.12. Removing python2.
 * **01.01.20:** - Add python3 alongside python2 during transition.
 * **19.12.19:** - Rebasing to alpine 3.11.
