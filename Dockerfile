@@ -90,6 +90,7 @@ RUN \
 	chardet \
 	pynzbget \
 	rarfile && \
+ ln -s /usr/bin/python3 /usr/bin/python && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \

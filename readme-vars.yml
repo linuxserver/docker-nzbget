@@ -70,6 +70,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "08.06.20:", desc: "Symlink python3 bin to python." }
   - { date: "01.06.20:", desc: "Rebasing to alpine 3.12. Removing python2." }
   - { date: "13.05.20:", desc: "Add rarfile python package (for DeepUnrar)." }
   - { date: "01.01.20:", desc: "Add python3 alongside python2 during transition." }
