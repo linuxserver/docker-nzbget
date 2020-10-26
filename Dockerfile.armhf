@@ -78,8 +78,8 @@ RUN \
 	libxslt \
 	openssl \
 	p7zip \
-	python3 \
 	py3-pip \
+	python3 \
 	unrar \
 	wget && \
  echo "**** install python packages ****" && \
