@@ -70,6 +70,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "26.10.20:", desc: "Fix python dependencies." }
   - { date: "24.08.20:", desc: "Fix ignored umask environment variable." }
   - { date: "08.06.20:", desc: "Symlink python3 bin to python." }
   - { date: "01.06.20:", desc: "Rebasing to alpine 3.12. Removing python2." }
