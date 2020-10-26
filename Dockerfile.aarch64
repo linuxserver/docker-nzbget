@@ -70,7 +70,6 @@ RUN \
 	libxml2-dev \
 	libxslt-dev \
 	make \
-	py3-pip \
 	python3-dev && \
  echo "**** install packages ****" && \
  apk add --no-cache \
@@ -79,6 +78,7 @@ RUN \
 	libxslt \
 	openssl \
 	p7zip \
+	py3-pip \
 	python3 \
 	unrar \
 	wget && \
