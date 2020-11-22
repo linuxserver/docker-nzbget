@@ -88,6 +88,7 @@ RUN \
  pip3 install --no-cache-dir \
 	apprise \
 	chardet \
+	lxml \
 	pynzbget \
 	rarfile && \
  ln -s /usr/bin/python3 /usr/bin/python && \
