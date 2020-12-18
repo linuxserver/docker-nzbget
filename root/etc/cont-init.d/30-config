@@ -12,7 +12,7 @@ mkdir -p /downloads
 	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 
 # permissions
-chown abc:abc \
+chown abc:abc -R \
 	/downloads
 chown abc:abc -R \
 	/app/nzbget \

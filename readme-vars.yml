@@ -64,12 +64,11 @@ app_setup_block: |
 
   You can add an additional mount point for intermediate unpacking folder with:-
 
-  `-v </path/to/intermedia_unpacking_folder>:/intermediate`
-
-  for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
+  `-v </path/to/intermedia_unpacking_folder>:/downloads/intermediate`
 
 # changelog
 changelogs:
+  - { date: "18.12.20:", desc: "Recursively chown /downloads." }
   - { date: "26.10.20:", desc: "Fix python dependencies." }
   - { date: "24.08.20:", desc: "Fix ignored umask environment variable." }
   - { date: "08.06.20:", desc: "Symlink python3 bin to python." }
