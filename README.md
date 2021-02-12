@@ -247,6 +247,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.01.21:** - Rebasing to alpine 3.13.
 * **26.10.20:** - Fix python dependencies.
 * **24.08.20:** - Fix ignored umask environment variable.
 * **08.06.20:** - Symlink python3 bin to python.
