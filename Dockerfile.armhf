@@ -1,5 +1,5 @@
 # Buildstage
-FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.13 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.12 as buildstage
 
 # set NZBGET version
 ARG NZBGET_RELEASE
