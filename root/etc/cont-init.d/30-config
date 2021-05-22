@@ -5,17 +5,17 @@ mkdir -p /downloads
 
 # delete lock file if found
 [[ -f /downloads/nzbget.lock ]] && \
-	rm /downloads/nzbget.lock
+    rm /downloads/nzbget.lock
 
 # check if config file exists in /config
 [[ ! -f /config/nzbget.conf ]] && \
-	cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
+    cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 
 # permissions
 chown abc:abc \
-	/downloads
+    /downloads
 chown abc:abc -R \
-	/app/nzbget \
-	/config
+    /app/nzbget \
+    /config
 chmod u+rw \
-	/config/nzbget.conf
+    /config/nzbget.conf

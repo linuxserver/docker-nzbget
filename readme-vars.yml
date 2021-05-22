@@ -29,8 +29,8 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "NZBGet App data." }
-  - { vol_path: "/downloads", vol_host_path: "<path/to/downloads>", desc: "Location of downloads on disk." }
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "NZBGet App data." }
+  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6789", internal_port: "6789", port_desc: "WebUI" }
@@ -70,6 +70,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "28.05.21:", desc: "Add linuxserver wheel index." }
   - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
   - { date: "26.10.20:", desc: "Fix python dependencies." }
   - { date: "24.08.20:", desc: "Fix ignored umask environment variable." }
