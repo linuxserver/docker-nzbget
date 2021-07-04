@@ -30,6 +30,8 @@ param_env_vars:
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "NZBGet App data." }
+opt_param_usage_include_vols: true
+opt_param_volumes:
   - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
@@ -39,7 +41,6 @@ cap_add_param: false
 
 # optional container parameters
 opt_param_usage_include_env: true
-opt_param_usage_include_vols: false
 opt_param_usage_include_ports: false
 opt_param_device_map: false
 opt_cap_add_param: false
@@ -68,8 +69,17 @@ app_setup_block: |
 
   for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
+  ### Media folders
+
+  We have set `/downloads` as a ***optional path***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
+
+  Use the optional paths if you dont understand, or dont want hardlinks/atomic moves.
+
+  The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
+
 # changelog
 changelogs:
+  - { date: "04.07.21:", desc: "Rebase to alpine 3.14" }
   - { date: "28.05.21:", desc: "Add linuxserver wheel index." }
   - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
   - { date: "26.10.20:", desc: "Fix python dependencies." }
