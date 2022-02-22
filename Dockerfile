@@ -1,5 +1,5 @@
 # Buildstage
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15 as buildstage
 
 # set NZBGET version
 ARG NZBGET_RELEASE
@@ -26,6 +26,7 @@ RUN \
   git clone https://github.com/nzbget/nzbget.git nzbget && \
   cd nzbget/ && \
   git checkout ${NZBGET_RELEASE} && \
+  git cherry-pick -n fa57474d && \
   ./configure \
     bindir='${exec_prefix}' && \
   make && \
@@ -54,8 +55,9 @@ RUN \
     "https://curl.haxx.se/ca/cacert.pem"
 
 # Runtime Stage
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
+ARG UNRAR_VERSION=6.1.4
 # set version label
 ARG BUILD_DATE
 ARG VERSION
@@ -67,6 +69,7 @@ RUN \
   apk add --no-cache --upgrade --virtual=build-dependencies \
     cargo \
     g++ \
+    gcc \
     libc-dev \
     libffi-dev \
     libxml2-dev \
@@ -83,8 +86,18 @@ RUN \
     p7zip \
     py3-pip \
     python3 \
-    unrar \
     wget && \
+  echo "**** install unrar from source ****" && \
+  mkdir /tmp/unrar && \
+  curl -o \
+    /tmp/unrar.tar.gz -L \
+    "https://www.rarlab.com/rar/unrarsrc-${UNRAR_VERSION}.tar.gz" && \  
+  tar xf \
+    /tmp/unrar.tar.gz -C \
+    /tmp/unrar --strip-components=1 && \
+  cd /tmp/unrar && \
+  make && \
+  install -v -m755 unrar /usr/bin && \
   echo "**** install python packages ****" && \
   pip3 install --no-cache-dir -U \
     pip && \
@@ -92,8 +105,10 @@ RUN \
     apprise \
     chardet \
     lxml \
+    py7zr \
     pynzbget \
-    rarfile && \
+    rarfile \
+    six && \
   ln -s /usr/bin/python3 /usr/bin/python && \
   echo "**** cleanup ****" && \
   apk del --purge \

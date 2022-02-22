@@ -91,7 +91,7 @@ for example, and changing the setting for InterDir in the PATHS tab of settings 
 
 ### Media folders
 
-We have set `/movies` and `/downloads` as ***optional paths***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to hardlink (TL;DR a way for a file to exist in multiple places on the same file system while only consuming one file worth of space), or atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
+We have set `/downloads` as a ***optional path***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
 
 Use the optional paths if you dont understand, or dont want hardlinks/atomic moves.
 
@@ -114,9 +114,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+      - NZBGET_USER=nzbget #optional
+      - NZBGET_PASS=tegbzn6789 #optional
     volumes:
       - /path/to/data:/config
-      - /path/to/downloads:/downloads
+      - /path/to/downloads:/downloads #optional
     ports:
       - 6789:6789
     restart: unless-stopped
@@ -130,9 +132,11 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
+  -e NZBGET_USER=nzbget `#optional` \
+  -e NZBGET_PASS=tegbzn6789 `#optional` \
   -p 6789:6789 \
   -v /path/to/data:/config \
-  -v /path/to/downloads:/downloads \
+  -v /path/to/downloads:/downloads `#optional` \
   --restart unless-stopped \
   lscr.io/linuxserver/nzbget
 ```
@@ -147,6 +151,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
+| `-e NZBGET_USER=nzbget` | Specify the user for web authentication. |
+| `-e NZBGET_PASS=tegbzn6789` | Specify the password for web authentication. |
 | `-v /config` | NZBGet App data. |
 | `-v /downloads` | Location of downloads on disk. |
 
@@ -259,19 +265,21 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **04.07.21:** - Rebase to alpine 3.14
+* **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
+* **04.07.21:** - Rebase to alpine 3.14.
 * **28.05.21:** - Add linuxserver wheel index.
 * **23.01.21:** - Rebasing to alpine 3.13.
 * **26.10.20:** - Fix python dependencies.
 * **24.08.20:** - Fix ignored umask environment variable.
 * **08.06.20:** - Symlink python3 bin to python.
 * **01.06.20:** - Rebasing to alpine 3.12. Removing python2.
+* **13.05.20:** - Add rarfile python package (for DeepUnrar).
 * **01.01.20:** - Add python3 alongside python2 during transition.
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **28.06.19:** - Rebasing to alpine 3.10.
 * **13.06.19:** - Add apprise, chardet & pynzbget packages.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
-* **22.02.19:** - Rebasing to alpine 3.9.
+* **25.02.19:** - Rebasing to alpine 3.9.
 * **20.01.19:** - Add pipeline logic and multi arch, build from source.
 * **21.08.18:** - Rebase to alpine 3.8.
 * **20.02.18:** - Add note about supplemental mount point for intermediate unpacking.
