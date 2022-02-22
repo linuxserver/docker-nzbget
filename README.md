@@ -114,6 +114,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+      - NZBGET_USER=nzbget #optional
+      - NZBGET_PASS=tegbzn6789 #optional
     volumes:
       - /path/to/data:/config
       - /path/to/downloads:/downloads #optional
@@ -130,6 +132,8 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
+  -e NZBGET_USER=nzbget `#optional` \
+  -e NZBGET_PASS=tegbzn6789 `#optional` \
   -p 6789:6789 \
   -v /path/to/data:/config \
   -v /path/to/downloads:/downloads `#optional` \
@@ -147,6 +151,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
+| `-e NZBGET_USER=nzbget` | Specify the user for web authentication. |
+| `-e NZBGET_PASS=tegbzn6789` | Specify the password for web authentication. |
 | `-v /config` | NZBGet App data. |
 | `-v /downloads` | Location of downloads on disk. |
 
@@ -259,7 +265,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **04.07.21:** - Rebase to alpine 3.14
+* **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
+* **04.07.21:** - Rebase to alpine 3.14.
 * **28.05.21:** - Add linuxserver wheel index.
 * **23.01.21:** - Rebasing to alpine 3.13.
 * **26.10.20:** - Fix python dependencies.

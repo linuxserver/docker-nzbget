@@ -40,7 +40,11 @@ param_device_map: false
 cap_add_param: false
 
 # optional container parameters
+# optional variables
 opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
+  - { env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
 opt_param_usage_include_ports: false
 opt_param_device_map: false
 opt_cap_add_param: false
@@ -79,7 +83,8 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "04.07.21:", desc: "Rebase to alpine 3.14" }
+  - { date: "22.02.22:", desc: "Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials." }
+  - { date: "04.07.21:", desc: "Rebase to alpine 3.14." }
   - { date: "28.05.21:", desc: "Add linuxserver wheel index." }
   - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
   - { date: "26.10.20:", desc: "Fix python dependencies." }
