@@ -15,7 +15,7 @@ RUN \
     libxslt-dev \
     make \
     ncurses-dev \
-    openssl-dev && \
+    openssl-dev=1.1.1n-r0 && \
   echo "**** build nzbget ****" && \
   if [ -z ${NZBGET_RELEASE+x} ]; then \
     NZBGET_RELEASE=$(curl -sX GET "https://api.github.com/repos/nzbget/nzbget/releases/latest" \
@@ -74,7 +74,7 @@ RUN \
     libxml2-dev \
     libxslt-dev \
     make \
-    openssl-dev \
+    openssl-dev=1.1.1n-r0 \
     python3-dev && \
   echo "**** install packages ****" && \
   apk add --no-cache \
