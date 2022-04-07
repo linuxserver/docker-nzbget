@@ -83,6 +83,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "07.04.22:", desc: "Temporary pin setuptools for builds to pass." }
   - { date: "22.02.22:", desc: "Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials." }
   - { date: "04.07.21:", desc: "Rebase to alpine 3.14." }
   - { date: "28.05.21:", desc: "Add linuxserver wheel index." }

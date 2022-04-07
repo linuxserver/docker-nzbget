@@ -265,6 +265,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **07.04.22:** - Temporary pin setuptools for builds to pass.
 * **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
 * **04.07.21:** - Rebase to alpine 3.14.
 * **28.05.21:** - Add linuxserver wheel index.
