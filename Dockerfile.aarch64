@@ -90,7 +90,7 @@ RUN \
   mkdir /tmp/unrar && \
   curl -o \
     /tmp/unrar.tar.gz -L \
-    "https://www.rarlab.com/rar/unrarsrc-${UNRAR_VERSION}.tar.gz" && \  
+    "https://www.rarlab.com/rar/unrarsrc-${UNRAR_VERSION}.tar.gz" && \
   tar xf \
     /tmp/unrar.tar.gz -C \
     /tmp/unrar --strip-components=1 && \
@@ -98,9 +98,9 @@ RUN \
   make && \
   install -v -m755 unrar /usr/bin && \
   echo "**** install python packages ****" && \
-  pip3 install --no-cache-dir -U \
+  pip3 install --no-cache-dir setuptools==60.10.0 -U \
     pip && \
-  pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ \
+  pip install --no-cache-dir setuptools==60.10.0 --find-links https://wheel-index.linuxserver.io/alpine/ \
     apprise \
     chardet \
     lxml \
