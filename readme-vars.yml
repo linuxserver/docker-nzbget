@@ -83,6 +83,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
   - { date: "22.02.22:", desc: "Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials." }
   - { date: "04.07.21:", desc: "Rebase to alpine 3.14." }
   - { date: "28.05.21:", desc: "Add linuxserver wheel index." }
