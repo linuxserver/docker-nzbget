@@ -1,5 +1,9 @@
 #!/usr/bin/with-contenv bash
 
+if [[ ! -d /downloads ]]; then
+    mkdir -p /downloads
+fi
+
 # delete lock file if found
 [[ -f /downloads/nzbget.lock ]] && \
     rm /downloads/nzbget.lock
@@ -9,9 +13,9 @@
     cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 
 # permissions
-chown abc:abc \
+lsiown abc:abc \
     /downloads
-chown abc:abc -R \
+lsiown abc:abc -R \
     /app/nzbget \
     /config
 chmod u+rw \

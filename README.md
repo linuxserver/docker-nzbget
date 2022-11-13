@@ -265,6 +265,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.11.22:** - Rebase testing to Alpine 3.16, migrate to s6v3.
 * **12.08.22:** - Bump unrar to 6.1.7.
 * **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
 * **04.07.21:** - Rebase to alpine 3.14.
