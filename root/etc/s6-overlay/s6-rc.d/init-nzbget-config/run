@@ -5,12 +5,14 @@ if [[ ! -d /downloads ]]; then
 fi
 
 # delete lock file if found
-[[ -f /downloads/nzbget.lock ]] && \
+if [[ -f /downloads/nzbget.lock ]]; then
     rm /downloads/nzbget.lock
+fi
 
 # check if config file exists in /config
-[[ ! -f /config/nzbget.conf ]] && \
+if [[ ! -f /config/nzbget.conf ]]; then
     cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
+fi
 
 # permissions
 lsiown abc:abc \
