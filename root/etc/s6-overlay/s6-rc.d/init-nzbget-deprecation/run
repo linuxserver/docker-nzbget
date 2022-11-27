@@ -12,7 +12,9 @@ echo '
 ******************************************************
 ******************************************************
 
-nzbget has been deprecated by its developers. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd
+nzbget has been deprecated by its developers.
+Please consider switching to SABnzbd
+https://github.com/linuxserver/docker-sabnzbd
 
 ******************************************************
 ******************************************************'
