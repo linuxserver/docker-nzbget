@@ -265,6 +265,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **27.11.22:** - Advanced notice: This image will be deprecated on 2022-12-31. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd
 * **13.11.22:** - Rebase testing to Alpine 3.16, migrate to s6v3.
 * **12.08.22:** - Bump unrar to 6.1.7.
 * **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
