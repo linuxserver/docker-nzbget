@@ -18,7 +18,7 @@ libattr-2.5.1-r1
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
 libcrypto1.1-1.1.1s-r0
-libcurl-7.83.1-r4
+libcurl-7.83.1-r5
 libffi-3.4.2-r1
 libgcc-11.2.1_git20220219-r2
 libgcrypt-1.10.1-r0
