@@ -7,7 +7,7 @@ release_type: prerelease
 release_tag: testing
 ls_branch: testing
 repo_vars:
-  - JSON_URL = 'https://api.github.com/repos/nzbget/nzbget/releases'
+  - JSON_URL = 'https://api.github.com/repos/nzbgetcom/nzbget/releases'
   - JSON_PATH = 'first(.[] | select(.prerelease == true)) | .tag_name'
   - BUILD_VERSION_ARG = 'NZBGET_RELEASE'
   - LS_USER = 'linuxserver'
@@ -22,9 +22,9 @@ repo_vars:
   - CI_WEB='true'
   - CI_PORT='6789'
   - CI_SSL='false'
-  - CI_DELAY='120'
-  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_DELAY='60'
+  - CI_DOCKERENV=''
   - CI_AUTH='nzbget:tegbzn6789'
   - CI_WEBPATH=''
 sponsor_links:
-  - { name: "NZBGet", url: "https://nzbget.net/donate" }
+  - { name: "NZBGet", url: "https://nzbget.com/donate/" }
