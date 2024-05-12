@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 if [[ ! -d /downloads ]]; then
     mkdir -p /downloads
@@ -17,8 +18,10 @@ fi
 # permissions
 lsiown abc:abc \
     /downloads
-lsiown abc:abc -R \
+
+lsiown -R abc:abc \
     /app/nzbget \
     /config
+
 chmod u+rw \
     /config/nzbget.conf

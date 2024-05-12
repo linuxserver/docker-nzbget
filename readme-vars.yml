@@ -2,21 +2,15 @@
 
 # project information
 project_name: nzbget
-project_url: "http://nzbget.net/"
+project_url: "http://nzbget.com/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-banner.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-project_blurb_optional_extras_enabled: false
-
-# deprecation information
-project_deprecation_status: true
-project_deprecation_message: "nzbget has been deprecated by its developers. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd"
 
 # supported architectures
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
 # development version
 development_versions: true
@@ -27,21 +21,18 @@ development_versions_items:
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-param_usage_include_net: false
+
 param_usage_include_env: true
-param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "NZBGet App data." }
+  - { vol_path: "/config", vol_host_path: "/path/to/nzbget/data", desc: "Persistent config" }
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
+  - { vol_path: "/downloads", vol_host_path: "/path/to/nzbget/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6789", internal_port: "6789", port_desc: "WebUI" }
-param_device_map: false
-cap_add_param: false
+
 
 # optional container parameters
 # optional variables
@@ -49,31 +40,19 @@ opt_param_usage_include_env: true
 opt_param_env_vars:
   - { env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
   - { env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
-opt_param_usage_include_ports: false
-opt_param_device_map: false
-opt_cap_add_param: false
-optional_block_1: false
 
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
-  Webui can be found at  `<your-ip>:6789` and the default login details (change ASAP) are
+  Webui can be found at `<your-ip>:6789` and the default login details (change ASAP) are
 
   `login:nzbget, password:tegbzn6789`
 
   To allow scheduling, from the webui set the time correction value in settings/logging.
 
-  To change umask settings.
-
-  ![](http://i.imgur.com/A4VMbwE.png)
-
-  scroll to bottom, set umask like this (example shown for unraid)
-
-  ![](http://i.imgur.com/mIqDEJJ.png)
-
   You can add an additional mount point for intermediate unpacking folder with:-
 
-  `-v </path/to/intermedia_unpacking_folder>:/intermediate`
+  `-v /path/to/nzbget/intermediate:/intermediate`
 
   for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
@@ -81,42 +60,10 @@ app_setup_block: |
 
   We have set `/downloads` as a ***optional path***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
 
-  Use the optional paths if you dont understand, or dont want hardlinks/atomic moves.
+  Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
 
   The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
 
 # changelog
 changelogs:
-  - { date: "31.12.22:", desc: "Deprecate image.  Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd" }
-  - { date: "27.11.22:", desc: "Advanced notice: This image will be deprecated on 2022-12-31. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd" }
-  - { date: "13.11.22:", desc: "Rebase master to 3.16, migrate to s6v3." }
-  - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
-  - { date: "22.02.22:", desc: "Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials." }
-  - { date: "04.07.21:", desc: "Rebase to alpine 3.14." }
-  - { date: "28.05.21:", desc: "Add linuxserver wheel index." }
-  - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
-  - { date: "26.10.20:", desc: "Fix python dependencies." }
-  - { date: "24.08.20:", desc: "Fix ignored umask environment variable." }
-  - { date: "08.06.20:", desc: "Symlink python3 bin to python." }
-  - { date: "01.06.20:", desc: "Rebasing to alpine 3.12. Removing python2." }
-  - { date: "13.05.20:", desc: "Add rarfile python package (for DeepUnrar)." }
-  - { date: "01.01.20:", desc: "Add python3 alongside python2 during transition." }
-  - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
-  - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
-  - { date: "13.06.19:", desc: "Add apprise, chardet & pynzbget packages." }
-  - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
-  - { date: "25.02.19:", desc: "Rebasing to alpine 3.9." }
-  - { date: "20.01.19:", desc: "Add pipeline logic and multi arch, build from source." }
-  - { date: "21.08.18:", desc: "Rebase to alpine 3.8." }
-  - { date: "20.02.18:", desc: "Add note about supplemental mount point for intermediate unpacking." }
-  - { date: "13.12.17:", desc: "Rebase to alpine 3.7." }
-  - { date: "02.09.17:", desc: "Place app in subfolder rather than /app." }
-  - { date: "12.07.17:", desc: "Add inspect commands to README, move to jenkins build and push." }
-  - { date: "28.05.17:", desc: "Rebase to alpine 3.6." }
-  - { date: "20.04.17:", desc: "Add testing branch." }
-  - { date: "06.02.17:", desc: "Rebase to alpine 3.5." }
-  - { date: "30.09.16:", desc: "Fix umask." }
-  - { date: "09.09.16:", desc: "Add layer badges to README." }
-  - { date: "27.08.16:", desc: "Add badges to README, perms fix on /app to allow updates." }
-  - { date: "19.08.16:", desc: "Rebase to alpine linux." }
-  - { date: "18.08.15:", desc: "Now useing latest version of unrar beta and implements the universal installer method." }
+  - { date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget" }

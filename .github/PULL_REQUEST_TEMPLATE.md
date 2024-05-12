@@ -1,7 +1,3 @@
-# DEPRECATION NOTICE
-
-This image is deprecated. We will not offer support for this image and it will not be updated.
-nzbget has been deprecated by its developers. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd
 <!--- Provide a general summary of your changes in the Title above -->
 
 [linuxserverurl]: https://linuxserver.io
