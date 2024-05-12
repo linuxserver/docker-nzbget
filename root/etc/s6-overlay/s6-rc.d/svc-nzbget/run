@@ -1,12 +1,14 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 # parse env vars to options
 OPTIONS=""
 if [[ ${NZBGET_USER} && ${NZBGET_USER-x} ]]; then
-  OPTIONS+="-o ControlUsername=${NZBGET_USER} "
+    OPTIONS+="-o ControlUsername=${NZBGET_USER} "
 fi
+
 if [[ ${NZBGET_PASS} && ${NZBGET_PASS-x} ]]; then
-  OPTIONS+="-o ControlPassword=${NZBGET_PASS} "
+    OPTIONS+="-o ControlPassword=${NZBGET_PASS} "
 fi
 
 exec \
