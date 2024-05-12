@@ -57,6 +57,15 @@ The architectures supported by this image are:
 | arm64 | ✅ | arm64v8-\<version tag\> |
 | armhf | ❌ | |
 
+## Version Tags
+
+This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
+
+| Tag | Available | Description |
+| :----: | :----: |--- |
+| latest | ✅ | Stable nzbget releases |
+| testing | ✅ | nzbget pre-releases |
+
 ## Application Setup
 
 Webui can be found at `<your-ip>:6789` and the default login details (change ASAP) are
@@ -299,36 +308,3 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 ## Versions
 
 * **09.05.24:** - Revive image based on the fork from https://github.com/nzbgetcom/nzbget
-* **31.12.22:** - Deprecate image.  Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd
-* **27.11.22:** - Advanced notice: This image will be deprecated on 2022-12-31. Please consider switching to SABnzbd https://github.com/linuxserver/docker-sabnzbd
-* **13.11.22:** - Rebase master to 3.16, migrate to s6v3.
-* **12.08.22:** - Bump unrar to 6.1.7.
-* **22.02.22:** - Rebase to alpine 3.15, add six and python 7zip tools, allow env variables for credentials.
-* **04.07.21:** - Rebase to alpine 3.14.
-* **28.05.21:** - Add linuxserver wheel index.
-* **23.01.21:** - Rebasing to alpine 3.13.
-* **26.10.20:** - Fix python dependencies.
-* **24.08.20:** - Fix ignored umask environment variable.
-* **08.06.20:** - Symlink python3 bin to python.
-* **01.06.20:** - Rebasing to alpine 3.12. Removing python2.
-* **13.05.20:** - Add rarfile python package (for DeepUnrar).
-* **01.01.20:** - Add python3 alongside python2 during transition.
-* **19.12.19:** - Rebasing to alpine 3.11.
-* **28.06.19:** - Rebasing to alpine 3.10.
-* **13.06.19:** - Add apprise, chardet & pynzbget packages.
-* **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
-* **25.02.19:** - Rebasing to alpine 3.9.
-* **20.01.19:** - Add pipeline logic and multi arch, build from source.
-* **21.08.18:** - Rebase to alpine 3.8.
-* **20.02.18:** - Add note about supplemental mount point for intermediate unpacking.
-* **13.12.17:** - Rebase to alpine 3.7.
-* **02.09.17:** - Place app in subfolder rather than /app.
-* **12.07.17:** - Add inspect commands to README, move to jenkins build and push.
-* **28.05.17:** - Rebase to alpine 3.6.
-* **20.04.17:** - Add testing branch.
-* **06.02.17:** - Rebase to alpine 3.5.
-* **30.09.16:** - Fix umask.
-* **09.09.16:** - Add layer badges to README.
-* **27.08.16:** - Add badges to README, perms fix on /app to allow updates.
-* **19.08.16:** - Rebase to alpine linux.
-* **18.08.15:** - Now using latest version of unrar beta and implements the universal installer method.
