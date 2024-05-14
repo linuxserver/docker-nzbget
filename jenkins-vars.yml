@@ -8,7 +8,7 @@ release_tag: testing
 ls_branch: testing
 repo_vars:
   - JSON_URL = 'https://api.github.com/repos/nzbgetcom/nzbget/git/matching-refs/tags/testing'
-  - JSON_PATH = '.[].object.sha'
+  - JSON_PATH = '.[].object.sha[:7]'
   - BUILD_VERSION_ARG = 'NZBGET_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-nzbget'
