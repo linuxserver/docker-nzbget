@@ -20,8 +20,8 @@ RUN \
     openssl-dev && \
   echo "**** build nzbget ****" && \
   if [ -z ${NZBGET_RELEASE+x} ]; then \
-    NZBGET_RELEASE=$(curl -sX GET "https://api.github.com/repos/nzbgetcom/nzbget/releases" \
-    | jq -r 'first(.[] | select(.prerelease == true)) | .tag_name'); \
+    NZBGET_RELEASE=$(curl -sX GET "https://api.github.com/repos/nzbgetcom/nzbget/git/matching-refs/tags/testing" \
+    | jq -r '.[].object.sha'); \
   fi && \
   mkdir -p /nzbget && \
   git clone https://github.com/nzbgetcom/nzbget.git nzbget && \

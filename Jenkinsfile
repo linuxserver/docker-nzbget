@@ -17,8 +17,8 @@ pipeline {
     GITLAB_TOKEN=credentials('b6f0f1dd-6952-4cf6-95d1-9c06380283f0')
     GITLAB_NAMESPACE=credentials('gitlab-namespace-id')
     DOCKERHUB_TOKEN=credentials('docker-hub-ci-pat')
-    JSON_URL = 'https://api.github.com/repos/nzbgetcom/nzbget/releases'
-    JSON_PATH = 'first(.[] | select(.prerelease == true)) | .tag_name'
+    JSON_URL = 'https://api.github.com/repos/nzbgetcom/nzbget/git/matching-refs/tags/testing'
+    JSON_PATH = ''.[].object.sha'
     BUILD_VERSION_ARG = 'NZBGET_RELEASE'
     LS_USER = 'linuxserver'
     LS_REPO = 'docker-nzbget'
