@@ -74,7 +74,7 @@ RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
     7zip \
-    boost1.82-json \
+    boost1.84-json \
     libxml2 \
     libxslt \
     openssl \
