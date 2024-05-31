@@ -25,14 +25,13 @@ param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/nzbget/data", desc: "Persistent config" }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Persistent config" }
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/downloads", vol_host_path: "/path/to/nzbget/downloads", desc: "Location of downloads on disk." }
+  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6789", internal_port: "6789", port_desc: "WebUI" }
-
 
 # optional container parameters
 # optional variables
@@ -66,4 +65,5 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget" }
+  - { date: "31.05.24:", desc: "Rebase to Alpine 3.20." }
+  - { date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget." }
