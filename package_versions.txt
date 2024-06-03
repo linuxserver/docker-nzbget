@@ -18,7 +18,7 @@ c-ares                  1.28.1-r0              apk
 ca-certificates         20240226-r0            apk                      
 ca-certificates-bundle  20240226-r0            apk                      
 catatonit               0.2.0-r0               apk                      
-certifi                 2024.2.2               python                   
+certifi                 2024.6.2               python                   
 charset-normalizer      3.3.2                  python                   
 click                   8.1.7                  python                   
 coreutils               9.5-r1                 apk                      
