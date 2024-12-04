@@ -6,41 +6,34 @@ project_url: "http://nzbget.com/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-banner.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "latest", desc: "Stable nzbget releases" }
-  - { tag: "testing", desc: "nzbget pre-releases" }
-
+  - {tag: "latest", desc: "Stable nzbget releases"}
+  - {tag: "testing", desc: "nzbget pre-releases"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-
 param_usage_include_env: true
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Persistent config" }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Persistent config"}
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
+  - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "6789", internal_port: "6789", port_desc: "WebUI" }
-
-
+  - {external_port: "6789", internal_port: "6789", port_desc: "WebUI"}
 # optional container parameters
 # optional variables
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
-  - { env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
-
+  - {env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
+  - {env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -63,8 +56,50 @@ app_setup_block: |
   Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
 
   The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
-
+# init diagram
+init_diagram: |
+  "nzbget:testing": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-nzbget-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    init-config -> init-nzbget-config
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-nzbget
+    svc-nzbget -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "nzbget:testing" <- Base Images
 # changelog
 changelogs:
-  - { date: "27.05.24:", desc: "Rebase to Alpine 3.20." }
-  - { date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget" }
+  - {date: "27.05.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget"}
