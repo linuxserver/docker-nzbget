@@ -74,12 +74,6 @@ Webui can be found at `<your-ip>:6789` and the default login details (change ASA
 
 To allow scheduling, from the webui set the time correction value in settings/logging.
 
-You can add an additional mount point for intermediate unpacking folder with:-
-
-`-v /path/to/nzbget/intermediate:/intermediate`
-
-for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
-
 ### Media folders
 
 We have set `/downloads` as a ***optional path***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
@@ -87,6 +81,14 @@ We have set `/downloads` as a ***optional path***, this is because it is the eas
 Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
 
 The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
+
+## Read-Only Operation
+
+This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
+
+## Non-Root Operation
+
+This image can be run with a non-root user. For details please [read the docs](https://docs.linuxserver.io/misc/non-root/).
 
 ## Usage
 
@@ -148,6 +150,8 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e NZBGET_PASS=tegbzn6789` | Specify the password for web authentication. |
 | `-v /config` | Persistent config |
 | `-v /downloads` | Location of downloads on disk. |
+| `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
+| `--user=1000:1000` | Run container with a non-root user. Please [read the docs](https://docs.linuxserver.io/misc/non-root/). |
 
 ## Environment variables from files (Docker secrets)
 
@@ -311,5 +315,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **27.05.24:** - Rebase to Alpine 3.21.
 * **27.05.24:** - Rebase to Alpine 3.20.
 * **09.05.24:** - Revive image based on the fork from https://github.com/nzbgetcom/nzbget

@@ -1,7 +1,17 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [[ ! -d /downloads ]]; then
+# check if config file exists in /config
+if [[ ! -f /config/nzbget.conf ]]; then
+    cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
+fi
+
+# Warn if /downloads is the MainDir and isn't mounted
+if ! grep -qe ' /downloads ' /proc/mounts && grep -qe 'MainDir=/downloads' /config/nzbget.conf; then
+    echo "********************************************* WARNING *********************************************"
+    echo "  Your MainDir is set to /downloads in /config/nzbget.conf but /downloads is not a mounted folder  "
+    echo "                    This may result in data loss when your container is updated                    "
+    echo "***************************************************************************************************"
     mkdir -p /downloads
 fi
 
@@ -10,18 +20,13 @@ if [[ -f /downloads/nzbget.lock ]]; then
     rm /downloads/nzbget.lock
 fi
 
-# check if config file exists in /config
-if [[ ! -f /config/nzbget.conf ]]; then
-    cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    lsiown abc:abc \
+        /downloads
+
+    lsiown -R abc:abc \
+        /config
+
+    chmod u+rw \
+        /config/nzbget.conf
 fi
-
-# permissions
-lsiown abc:abc \
-    /downloads
-
-lsiown -R abc:abc \
-    /app/nzbget \
-    /config
-
-chmod u+rw \
-    /config/nzbget.conf

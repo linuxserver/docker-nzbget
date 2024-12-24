@@ -34,6 +34,8 @@ opt_param_usage_include_env: true
 opt_param_env_vars:
   - {env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
   - {env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
+readonly_supported: true
+nonroot_supported: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -42,12 +44,6 @@ app_setup_block: |
   `login:nzbget, password:tegbzn6789`
 
   To allow scheduling, from the webui set the time correction value in settings/logging.
-
-  You can add an additional mount point for intermediate unpacking folder with:-
-
-  `-v /path/to/nzbget/intermediate:/intermediate`
-
-  for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
 
   ### Media folders
 
@@ -101,5 +97,6 @@ init_diagram: |
   "nzbget:testing" <- Base Images
 # changelog
 changelogs:
+  - {date: "27.05.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "27.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget"}
