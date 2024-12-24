@@ -37,7 +37,7 @@ RUN \
   rm -rf /app/nzbget/bin/ && \
   rm -rf /app/nzbget/etc/ && \
   sed -i \
-    -e "s|^MainDir=.*|MainDir=/downloads|g" \
+    -e "s|^MainDir=.*|MainDir=/config|g" \
     -e "s|^ScriptDir=.*|ScriptDir=$\{MainDir\}/scripts|g" \
     -e "s|^WebDir=.*|WebDir=$\{AppDir\}/webui|g" \
     -e "s|^ConfigTemplate=.*|ConfigTemplate=$\{AppDir\}/webui/nzbget.conf.template|g" \
@@ -45,8 +45,8 @@ RUN \
     -e "s|^SevenZipCmd=.*|SevenZipCmd=7z|g" \
     -e "s|^CertStore=.*|CertStore=$\{AppDir\}/cacert.pem|g" \
     -e "s|^CertCheck=.*|CertCheck=yes|g" \
-    -e "s|^DestDir=.*|DestDir=$\{MainDir\}/completed|g" \
-    -e "s|^InterDir=.*|InterDir=$\{MainDir\}/intermediate|g" \
+    -e "s|^DestDir=.*|DestDir=/downloads/completed|g" \
+    -e "s|^InterDir=.*|InterDir=/downloads/intermediate|g" \
     -e "s|^LogFile=.*|LogFile=$\{MainDir\}/nzbget.log|g" \
     -e "s|^AuthorizedIP=.*|AuthorizedIP=127.0.0.1|g" \
   /app/nzbget/share/nzbget/nzbget.conf && \

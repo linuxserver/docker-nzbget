@@ -315,6 +315,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **27.05.24:** - Rebase to Alpine 3.21.
+* **27.05.24:** - Rebase to Alpine 3.21. Move MainDir to /config, leave default DestDir/InterDir as /downloads.
 * **27.05.24:** - Rebase to Alpine 3.20.
 * **09.05.24:** - Revive image based on the fork from https://github.com/nzbgetcom/nzbget

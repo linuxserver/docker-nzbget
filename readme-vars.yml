@@ -97,6 +97,6 @@ init_diagram: |
   "nzbget:testing" <- Base Images
 # changelog
 changelogs:
-  - {date: "27.05.24:", desc: "Rebase to Alpine 3.21."}
+  - {date: "27.05.24:", desc: "Rebase to Alpine 3.21. Move MainDir to /config, leave default DestDir/InterDir as /downloads."}
   - {date: "27.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "09.05.24:", desc: "Revive image based on the fork from https://github.com/nzbgetcom/nzbget"}

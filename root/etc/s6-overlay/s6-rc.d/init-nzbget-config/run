@@ -6,23 +6,16 @@ if [[ ! -f /config/nzbget.conf ]]; then
     cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 fi
 
-# Warn if /downloads is the MainDir and isn't mounted
-if ! grep -qe ' /downloads ' /proc/mounts && grep -qe 'MainDir=/downloads' /config/nzbget.conf; then
-    echo "********************************************* WARNING *********************************************"
-    echo "  Your MainDir is set to /downloads in /config/nzbget.conf but /downloads is not a mounted folder  "
-    echo "                    This may result in data loss when your container is updated                    "
-    echo "***************************************************************************************************"
-    mkdir -p /downloads
-fi
-
 # delete lock file if found
-if [[ -f /downloads/nzbget.lock ]]; then
-    rm /downloads/nzbget.lock
+if [[ -f /config/nzbget.lock ]]; then
+    rm /config/nzbget.lock
 fi
 
 if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
-    lsiown abc:abc \
-        /downloads
+    if grep -qe ' /downloads ' /proc/mounts; then
+        lsiown abc:abc \
+            /downloads
+    fi
 
     lsiown -R abc:abc \
         /config
