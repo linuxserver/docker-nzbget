@@ -1,27 +1,25 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [[ ! -d /downloads ]]; then
-    mkdir -p /downloads
-fi
-
-# delete lock file if found
-if [[ -f /downloads/nzbget.lock ]]; then
-    rm /downloads/nzbget.lock
-fi
-
 # check if config file exists in /config
 if [[ ! -f /config/nzbget.conf ]]; then
     cp /app/nzbget/share/nzbget/nzbget.conf /config/nzbget.conf
 fi
 
-# permissions
-lsiown abc:abc \
-    /downloads
+# delete lock file if found
+if [[ -f /config/nzbget.lock ]]; then
+    rm /config/nzbget.lock
+fi
 
-lsiown -R abc:abc \
-    /app/nzbget \
-    /config
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    if grep -qe ' /downloads ' /proc/mounts; then
+        lsiown abc:abc \
+            /downloads
+    fi
 
-chmod u+rw \
-    /config/nzbget.conf
+    lsiown -R abc:abc \
+        /config
+
+    chmod u+rw \
+        /config/nzbget.conf
+fi

@@ -34,6 +34,8 @@ opt_param_usage_include_env: true
 opt_param_env_vars:
   - {env_var: "NZBGET_USER", env_value: "nzbget", desc: "Specify the user for web authentication."}
   - {env_var: "NZBGET_PASS", env_value: "tegbzn6789", desc: "Specify the password for web authentication."}
+readonly_supported: true
+nonroot_supported: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
