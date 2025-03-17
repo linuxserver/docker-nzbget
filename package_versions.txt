@@ -42,7 +42,7 @@ libbsd                  0.12.2-r0         apk
 libbz2                  1.0.8-r6          apk                      
 libcrypto3              3.3.3-r0          apk                      
 libcurl                 8.12.1-r0         apk                      
-libexpat                2.6.4-r0          apk                      
+libexpat                2.7.0-r0          apk                      
 libffi                  3.4.7-r0          apk                      
 libgcc                  14.2.0-r4         apk                      
 libgcrypt               1.10.3-r1         apk                      
@@ -58,7 +58,7 @@ libssl3                 3.3.3-r0          apk
 libstdc++               14.2.0-r4         apk                      
 libunistring            1.2-r0            apk                      
 libxml2                 2.13.4-r5         apk                      
-libxslt                 1.1.42-r1         apk                      
+libxslt                 1.1.42-r2         apk                      
 linux-pam               1.6.1-r1          apk                      
 markdown                3.7               python                   
 more-itertools          10.3.0            python                   
