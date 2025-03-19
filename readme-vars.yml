@@ -51,14 +51,7 @@ app_setup_block: |
   `-v /path/to/nzbget/intermediate:/intermediate`
 
   for example, and changing the setting for InterDir in the PATHS tab of settings to `/intermediate`
-
-  ### Media folders
-
-  We have set `/downloads` as a ***optional path***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
-
-  Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
-
-  The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
+readme_media: true
 # init diagram
 init_diagram: |
   "nzbget:latest": {
