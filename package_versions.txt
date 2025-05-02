@@ -19,7 +19,7 @@ ca-certificates         20241121-r1       apk
 ca-certificates-bundle  20241121-r1       apk                     
 catatonit               0.2.0-r0          apk                     
 certifi                 2025.4.26         python                  
-charset-normalizer      3.4.1             python                  
+charset-normalizer      3.4.2             python                  
 click                   8.1.8             python                  
 coreutils               9.5-r2            apk                     
 coreutils-env           9.5-r2            apk                     
