@@ -72,7 +72,7 @@ oauthlib                3.2.2             python
 oniguruma               6.9.9-r0          apk                     
 openssl                 3.3.3-r0          apk                     
 packaging               24.2              python                  
-pip                     25.1              python                  
+pip                     25.1.1            python                  
 platformdirs            4.2.2             python                  
 procps-ng               4.0.4-r2          apk                     
 pyc                     3.12.10-r0        apk                     
