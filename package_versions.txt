@@ -84,11 +84,11 @@ packaging               24.2              python
 pip                     25.1.1            python                   
 platformdirs            4.2.2             python                   
 procps-ng               4.0.4-r2          apk                      
-pyc                     3.12.10-r1        apk                      
+pyc                     3.12.11-r0        apk                      
 pynzb                   0.1.0             python                   
-python3                 3.12.10-r1        apk                      
-python3-pyc             3.12.10-r1        apk                      
-python3-pycache-pyc0    3.12.10-r1        apk                      
+python3                 3.12.11-r0        apk                      
+python3-pyc             3.12.11-r0        apk                      
+python3-pycache-pyc0    3.12.11-r0        apk                      
 pyyaml                  6.0.2             python                   
 readline                8.2.13-r0         apk                      
 requests                2.32.3            python                   
