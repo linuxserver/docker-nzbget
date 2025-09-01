@@ -11,6 +11,7 @@ apprise                 1.9.4             python
 autocommand             2.2.2             python                   
 backports-tarfile       1.2.0             python                   
 bash                    5.2.37-r0         apk                      
+boost1.84-filesystem    1.84.0-r3         apk                      
 boost1.84-json          1.84.0-r3         apk                      
 brotli-libs             1.1.0-r2          apk                      
 busybox                 1.37.0-r19        apk                      
