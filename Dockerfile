@@ -73,6 +73,7 @@ RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
     7zip \
+    boost1.84-filesystem \
     boost1.84-json \
     libxml2 \
     libxslt \
