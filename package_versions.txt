@@ -6,7 +6,7 @@ alpine-baselayout       3.7.0-r0          apk
 alpine-baselayout-data  3.7.0-r0          apk                      
 alpine-keys             2.5-r0            apk                      
 alpine-release          3.22.1-r0         apk                      
-apk-tools               2.14.9-r2         apk                      
+apk-tools               2.14.9-r3         apk                      
 apprise                 1.9.4             python                   
 autocommand             2.2.2             python                   
 backports-tarfile       1.2.0             python                   
@@ -26,7 +26,7 @@ cli                     UNKNOWN           binary
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
 cli-arm64               UNKNOWN           binary                   
-click                   8.2.1             python                   
+click                   8.3.0             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
 coreutils-fmt           9.7-r1            apk                      
@@ -46,7 +46,7 @@ jaraco-context          5.3.0             python
 jaraco-functools        4.0.1             python                   
 jaraco-text             3.12.1            python                   
 jq                      1.8.0-r0          apk                      
-libapk2                 2.14.9-r2         apk                      
+libapk2                 2.14.9-r3         apk                      
 libattr                 2.5.2-r2          apk                      
 libbsd                  0.12.2-r0         apk                      
 libbz2                  1.0.8-r6          apk                      
