@@ -26,7 +26,7 @@ cli                     UNKNOWN           binary
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
 cli-arm64               UNKNOWN           binary                   
-click                   8.3.0             python                   
+click                   8.3.1             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
 coreutils-fmt           9.7-r1            apk                      
