@@ -16,7 +16,7 @@ boost1.84-json          1.84.0-r3         apk
 brotli-libs             1.1.0-r2          apk                      
 busybox                 1.37.0-r20        apk                      
 busybox-binsh           1.37.0-r20        apk                      
-c-ares                  1.34.5-r0         apk                      
+c-ares                  1.34.6-r0         apk                      
 ca-certificates         20250911-r0       apk                      
 ca-certificates-bundle  20250911-r0       apk                      
 catatonit               0.2.1-r0          apk                      
@@ -102,7 +102,7 @@ ssl_client              1.37.0-r20        apk
 tomli                   2.0.1             python                   
 typeguard               4.3.0             python                   
 typing-extensions       4.12.2            python                   
-tzdata                  2025b-r0          apk                      
+tzdata                  2025c-r0          apk                      
 urllib3                 2.6.2             python                   
 utmps-libs              0.1.3.1-r0        apk                      
 wheel                   0.45.1            python  (+1 duplicate)   
