@@ -50,7 +50,7 @@ libbsd                  0.12.2-r0         apk
 libbz2                  1.0.8-r6          apk                      
 libcrypto3              3.5.5-r0          apk                      
 libcurl                 8.14.1-r2         apk                      
-libexpat                2.7.3-r0          apk                      
+libexpat                2.7.4-r0          apk                      
 libffi                  3.4.8-r0          apk                      
 libgcc                  14.2.0-r6         apk                      
 libidn2                 2.3.7-r0          apk                      
@@ -79,7 +79,7 @@ oauthlib                3.3.1             python
 oniguruma               6.9.10-r0         apk                      
 openssl                 3.5.5-r0          apk                      
 packaging               26.0              python  (+1 duplicate)   
-pip                     26.0              python                   
+pip                     26.0.1            python                   
 platformdirs            4.4.0             python                   
 procps-ng               4.0.4-r3          apk                      
 pyc                     3.12.12-r0        apk                      
