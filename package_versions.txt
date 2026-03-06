@@ -21,7 +21,7 @@ ca-certificates         20250911-r0       apk
 ca-certificates-bundle  20250911-r0       apk                      
 catatonit               0.2.1-r0          apk                      
 certifi                 2026.2.25         python                   
-charset-normalizer      3.4.4             python                   
+charset-normalizer      3.4.5             python                   
 cli                     UNKNOWN           binary                   
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
