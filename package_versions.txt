@@ -7,7 +7,7 @@ alpine-baselayout-data  3.7.0-r0          apk
 alpine-keys             2.5-r0            apk                      
 alpine-release          3.22.3-r0         apk                      
 apk-tools               2.14.9-r3         apk                      
-apprise                 1.9.7             python                   
+apprise                 1.9.8             python                   
 autocommand             2.2.2             python                   
 backports-tarfile       1.2.0             python                   
 bash                    5.2.37-r0         apk                      
@@ -91,13 +91,13 @@ readline                8.2.13-r1         apk
 requests                2.32.5            python                   
 requests-oauthlib       2.0.0             python                   
 scanelf                 1.3.8-r1          apk                      
-setuptools              82.0.0            python                   
+setuptools              82.0.1            python                   
 shadow                  4.17.3-r0         apk                      
 skalibs-libs            2.14.4.0-r0       apk                      
 sqlite-libs             3.49.2-r1         apk                      
 ssl_client              1.37.0-r20        apk                      
 tomli                   2.4.0             python                   
-tzdata                  2025c-r0          apk                      
+tzdata                  2026a-r0          apk                      
 urllib3                 2.6.3             python                   
 utmps-libs              0.1.3.1-r0        apk                      
 wheel                   0.46.3            python  (+1 duplicate)   
