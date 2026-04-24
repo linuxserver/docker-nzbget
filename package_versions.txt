@@ -20,13 +20,13 @@ c-ares                  1.34.6-r0         apk
 ca-certificates         20250911-r0       apk                      
 ca-certificates-bundle  20250911-r0       apk                      
 catatonit               0.2.1-r0          apk                      
-certifi                 2026.2.25         python                   
+certifi                 2026.4.22         python                   
 charset-normalizer      3.4.7             python                   
 cli                     UNKNOWN           binary                   
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
 cli-arm64               UNKNOWN           binary                   
-click                   8.3.2             python                   
+click                   8.3.3             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
 coreutils-fmt           9.7-r1            apk                      
@@ -38,7 +38,7 @@ gui                     UNKNOWN           binary
 gui-32                  UNKNOWN           binary                   
 gui-64                  UNKNOWN           binary                   
 gui-arm64               UNKNOWN           binary                   
-idna                    3.11              python                   
+idna                    3.13              python                   
 importlib-metadata      8.7.1             python                   
 jaraco-context          6.1.0             python                   
 jaraco-functools        4.4.0             python                   
@@ -101,7 +101,8 @@ tomli                   2.4.0             python
 tzdata                  2026a-r0          apk                      
 urllib3                 2.6.3             python                   
 utmps-libs              0.1.3.1-r0        apk                      
-wheel                   0.46.3            python  (+1 duplicate)   
+wheel                   0.46.3            python                   
+wheel                   0.47.0            python                   
 xz-libs                 5.8.1-r0          apk                      
 zipp                    3.23.0            python                   
 zlib                    1.3.2-r0          apk                      
