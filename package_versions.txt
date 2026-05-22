@@ -26,7 +26,7 @@ cli                     UNKNOWN           binary
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
 cli-arm64               UNKNOWN           binary                   
-click                   8.4.0             python                   
+click                   8.4.1             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
 coreutils-fmt           9.7-r1            apk                      
@@ -38,7 +38,7 @@ gui                     UNKNOWN           binary
 gui-32                  UNKNOWN           binary                   
 gui-64                  UNKNOWN           binary                   
 gui-arm64               UNKNOWN           binary                   
-idna                    3.15              python                   
+idna                    3.16              python                   
 importlib-metadata      8.7.1             python                   
 jaraco-context          6.1.0             python                   
 jaraco-functools        4.4.0             python                   
