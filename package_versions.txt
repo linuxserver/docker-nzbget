@@ -7,7 +7,7 @@ alpine-baselayout-data  3.7.0-r0          apk
 alpine-keys             2.5-r0            apk                      
 alpine-release          3.22.4-r0         apk                      
 apk-tools               2.14.9-r3         apk                      
-apprise                 1.10.0            python                   
+apprise                 1.11.0            python                   
 autocommand             2.2.2             python                   
 backports-tarfile       1.2.0             python                   
 bash                    5.2.37-r0         apk                      
@@ -38,7 +38,7 @@ gui                     UNKNOWN           binary
 gui-32                  UNKNOWN           binary                   
 gui-64                  UNKNOWN           binary                   
 gui-arm64               UNKNOWN           binary                   
-idna                    3.16              python                   
+idna                    3.17              python                   
 importlib-metadata      8.7.1             python                   
 jaraco-context          6.1.0             python                   
 jaraco-functools        4.4.0             python                   
