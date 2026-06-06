@@ -322,6 +322,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.06.26:** - Rebase to Alpine 3.23.
 * **01.09.25:** - Add new dependency for boost filesystem.
 * **05.07.25:** - Rebase to Alpine 3.22.
 * **24.12.24:** - Rebase to Alpine 3.21. Move MainDir to /config, leave default DestDir/InterDir as /downloads.
