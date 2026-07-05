@@ -95,6 +95,7 @@ init_diagram: |
   "nzbget:testing" <- Base Images
 # changelog
 changelogs:
+  - {date: "05.07.26:", desc: "Rebase to Alpine 3.24."}
   - {date: "05.06.26:", desc: "Rebase to Alpine 3.23."}
   - {date: "18.08.25:", desc: "Install new boost-filesystem dependancy."}
   - {date: "05.07.25:", desc: "Rebase to Alpine 3.22."}
