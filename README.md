@@ -322,6 +322,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.07.26:** - Rebase to Alpine 3.24.
 * **05.06.26:** - Rebase to Alpine 3.23.
 * **01.09.25:** - Add new dependency for boost filesystem.
 * **05.07.25:** - Rebase to Alpine 3.22.
