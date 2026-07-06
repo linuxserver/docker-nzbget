@@ -90,7 +90,7 @@ init_diagram: |
     svc-nzbget -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.23"
+    "baseimage-alpine:3.24"
   }
   "nzbget:latest" <- Base Images
 # changelog
