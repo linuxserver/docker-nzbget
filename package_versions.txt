@@ -6,7 +6,7 @@ alpine-baselayout       3.7.2-r1          apk
 alpine-baselayout-data  3.7.2-r1          apk                      
 alpine-keys             2.6-r0            apk                      
 alpine-release          3.24.1-r0         apk                      
-apk-tools               3.0.6-r0          apk                      
+apk-tools               3.0.7-r0          apk                      
 apprise                 1.12.0            python                   
 autocommand             2.2.2             python                   
 backports-tarfile       1.2.0             python                   
@@ -44,7 +44,7 @@ jaraco-context          6.1.0             python
 jaraco-functools        4.4.0             python                   
 jaraco-text             4.0.0             python                   
 jq                      1.8.1-r0          apk                      
-libapk                  3.0.6-r0          apk                      
+libapk                  3.0.7-r0          apk                      
 libattr                 2.5.2-r2          apk                      
 libbsd                  0.12.2-r0         apk                      
 libbz2                  1.0.8-r6          apk                      
@@ -78,8 +78,8 @@ oauthlib                3.3.1             python
 oniguruma               6.9.10-r0         apk                      
 openssl                 3.5.7-r0          apk                      
 packaging               26.0              python                   
-packaging               26.2              python                   
-pip                     26.2              python                   
+packaging               26.3              python                   
+pip                     26.2.1            python                   
 platformdirs            4.4.0             python                   
 procps-ng               4.0.6-r0          apk                      
 pyc                     3.14.5-r0         apk                      
