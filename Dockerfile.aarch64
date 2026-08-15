@@ -21,7 +21,7 @@ RUN \
   echo "**** build nzbget ****" && \
   if [ -z ${NZBGET_RELEASE+x} ]; then \
     NZBGET_RELEASE=$(curl -sX GET "https://api.github.com/repos/nzbgetcom/nzbget/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   mkdir -p /nzbget && \
   git clone https://github.com/nzbgetcom/nzbget.git nzbget && \
