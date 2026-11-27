@@ -20,8 +20,8 @@ c-ares                  1.34.9-r0         apk
 ca-certificates         20261020-r0       apk                      
 ca-certificates-bundle  20261020-r0       apk                      
 catatonit               0.2.1-r0          apk                      
-certifi                 2026.10.23        python                   
-charset-normalizer      3.5.2             python                   
+certifi                 2026.11.20        python                   
+charset-normalizer      3.5.3             python                   
 cli                     UNKNOWN           binary                   
 cli-32                  UNKNOWN           binary                   
 cli-64                  UNKNOWN           binary                   
@@ -50,8 +50,8 @@ libbsd                  0.12.2-r0         apk
 libbz2                  1.0.8-r6          apk                      
 libcrypto3              3.5.9-r1          apk                      
 libcurl                 8.23.0-r0         apk                      
-libexpat                2.10.0-r0         apk                      
-libffi                  3.5.2-r1          apk                      
+libexpat                2.11.0-r0         apk                      
+libffi                  3.8.2-r0          apk                      
 libgcc                  15.2.0-r5         apk                      
 libidn2                 2.3.8-r0          apk                      
 libintl                 1.0-r0            apk                      
@@ -63,10 +63,10 @@ libpsl                  0.21.5-r3         apk
 libssl3                 3.5.9-r1          apk                      
 libstdc++               15.2.0-r5         apk                      
 libunistring            1.4.2-r0          apk                      
-libxml2                 2.13.9-r3         apk                      
+libxml2                 2.13.9-r5         apk                      
 libxslt                 1.1.43-r4         apk                      
 linux-pam               1.7.1-r2          apk                      
-markdown                3.11.3            python                   
+markdown                3.11.4            python                   
 more-itertools          10.8.0            python                   
 mpdecimal               4.0.1-r0          apk                      
 musl                    1.2.6-r3          apk                      
@@ -77,16 +77,18 @@ nghttp2-libs            1.70.0-r0         apk
 oauthlib                4.0.1             python                   
 oniguruma               6.9.10-r0         apk                      
 openssl                 3.5.9-r1          apk                      
-packaging               26.3              python  (+1 duplicate)   
+packaging               26.3              python                   
+packaging               26.4              python                   
 pip                     26.3              python                   
 platformdirs            4.4.0             python                   
 procps-ng               4.0.6-r0          apk                      
-pyc                     3.14.10-r1        apk                      
+pyc                     3.14.10-r2        apk                      
 pynzb                   0.1.0             python                   
-python3                 3.14.10-r1        apk                      
-python3-pyc             3.14.10-r1        apk                      
-python3-pycache-pyc0    3.14.10-r1        apk                      
-pyyaml                  6.0.3             python                   
+python3                 3.14.10-r2        apk                      
+python3-ndbm            3.14.10-r3        apk                      
+python3-pyc             3.14.10-r2        apk                      
+python3-pycache-pyc0    3.14.10-r2        apk                      
+pyyaml                  6.0.4             python                   
 readline                8.3.3-r1          apk                      
 requests                2.34.2            python                   
 requests-oauthlib       2.0.0             python                   
@@ -105,4 +107,4 @@ wheel                   0.48.0            python
 xz-libs                 5.8.4-r0          apk                      
 zipp                    3.23.0            python                   
 zlib                    1.4-r0            apk                      
-zstd-libs               1.5.7-r2          apk                      
+zstd-libs               1.6.0-r1          apk                      
